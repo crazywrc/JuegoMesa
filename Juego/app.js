@@ -20,6 +20,16 @@ const successMessage = document.getElementById('successMessage');
 const apiSetup = document.getElementById('apiSetup');
 const generateBtnText = document.getElementById('generateBtnText');
 
+// Configuración de jugadores
+let players = [];
+let numPlayers = 0;
+const playerSetup = document.getElementById('playerSetup');
+const playerNames = document.getElementById('playerNames');
+const numPlayersSelect = document.getElementById('numPlayers');
+const playerSetupNextBtn = document.getElementById('playerSetupNextBtn');
+const namesContainer = document.getElementById('namesContainer');
+const saveNamesBtn = document.getElementById('saveNamesBtn');
+
 // Elementos de estadísticas
 const totalQuestionsEl = document.getElementById('totalQuestions');
 const correctAnswersEl = document.getElementById('correctAnswers');
@@ -33,6 +43,8 @@ resetBtn.addEventListener('click', resetStats);
 apiKeyInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') validateAndStart();
 });
+playerSetupNextBtn.addEventListener('click', showNameInputs);
+saveNamesBtn.addEventListener('click', savePlayerNames);
 
 // Cargar datos guardados
 loadSavedData();
@@ -43,7 +55,7 @@ function loadSavedData() {
         if (result.apiKey) {
             apiKey = result.apiKey;
             apiKeyInput.value = result.apiKey;
-            enableGame();
+            // La partida se habilitará una vez configurados los jugadores
         }
     });
 
@@ -280,4 +292,36 @@ function resetStats() {
         saveStats();
         showMessage('Estadísticas reiniciadas', 'success');
     }
+}
+
+function showNameInputs() {
+    numPlayers = parseInt(numPlayersSelect.value, 10);
+
+    if (numPlayers < 4 || numPlayers > 10) {
+        showMessage('El nombre de jugadors ha de ser entre 4 i 10', 'error');
+        return;
+    }
+
+    namesContainer.innerHTML = '';
+    for (let i = 1; i <= numPlayers; i++) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.id = `playerName${i}`;
+        input.placeholder = `Jugador ${i}`;
+        namesContainer.appendChild(input);
+    }
+    playerSetup.style.display = 'none';
+    playerNames.style.display = 'block';
+    questionText.textContent = 'Escriu el nom de cada jugador';
+}
+
+function savePlayerNames() {
+    players = [];
+    for (let i = 1; i <= numPlayers; i++) {
+        const name = document.getElementById(`playerName${i}`).value.trim() || `Jugador ${i}`;
+        players.push(name);
+    }
+    playerNames.style.display = 'none';
+    apiSetup.style.display = 'block';
+    questionText.textContent = 'Introdueix la teva API Key per començar a jugar';
 }

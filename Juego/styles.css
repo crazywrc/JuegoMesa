@@ -165,6 +165,34 @@ button:disabled {
     border: 2px solid #2196f3;
 }
 
+.setup-box {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #2196f3;
+}
+.setup-box select,
+.setup-box input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.setup-box button {
+    background: #2196f3;
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.9em;
+}
+
+.setup-box button:hover {
+    background: #1976d2;
+}
+
 .api-setup h3 {
     font-size: 1.1em;
     margin-bottom: 10px;
