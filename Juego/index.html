@@ -395,6 +395,26 @@
 <body>
     <div class="container">
         <h1>🎯 Trivia Cultural</h1>
+
+        <div class="setup-box" id="playerSetup">
+            <h3>👥 Nombre de jugadores</h3>
+            <select id="numPlayers">
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <button id="playerSetupNextBtn">Següent</button>
+        </div>
+
+        <div class="setup-box" id="playerNames" style="display:none;">
+            <h3>✏️ Noms dels jugadors</h3>
+            <div id="namesContainer"></div>
+            <button id="saveNamesBtn">Guardar noms</button>
+        </div>
         
         <div class="stats-container">
             <div class="stat-box">
@@ -415,7 +435,7 @@
             <p>💡 Esta aplicación utiliza la API de OpenAI. Obtén tu API Key en <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com</a></p>
         </div>
 
-        <div class="api-setup" id="apiSetup">
+        <div class="api-setup" id="apiSetup" style="display:none;">
             <h3>⚙️ Configuración de API</h3>
             <p>Ingresa tu API Key de OpenAI para comenzar:</p>
             <input type="password" id="apiKey" placeholder="sk-...">
@@ -425,7 +445,7 @@
         <div class="question-box">
             <div class="question-content">
                 <p class="question-text" id="questionText">
-                    Ingresa tu API Key de OpenAI para comenzar el juego
+                    Selecciona entre 4 y 10 jugadores para comenzar
                 </p>
             </div>
         </div>
