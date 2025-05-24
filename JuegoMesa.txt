@@ -1,0 +1,28 @@
+Buscadores de la sabiduria y saboteadores del conocimiento
+
+
+Modelo local o online con preguntas generadas
+
+Insertar jugadores (Numero y en funcion del numero slots para los nombres)
+
+Seleccion de temas entre tecnologia, social, historia, geografia, arte y deportes Y dificulatad de cada tema selaccionado
+
+Dar los roles a cada nombre dentro de la misma web (Jugador Matias va clica el boton para ver su rol y vuelve a clicar para dejar de ver y mostrar el nombre del siguiente jugador a ver su rol)
+
+Aplicamos rachas y que el jugo diga direcatamente quien a ganado en funcion de las preguntas con las correctas y erroneas aplicando las normas
+
+Normas:
+
+Jugadores minimos: 4
+
+Jugadores maximos: 10
+
+4-5 jugadores son 1 impostor / 30 preguntas / Nº aciertos para ganar normales 20 > impostores 
+
+6-7 jugadores son 2 impostores / 30 preguntas / Nº aciertos para ganar normales 20 > impostores
+
+8-10 jugadores son 3 impostores / 30 preguntas / Nº aciertos para ganar normales 20 > impostores
+
+Comodines:
+
+To do (Que el profe de ideas o estos dias vamos sacando ideas)
