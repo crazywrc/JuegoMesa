@@ -295,10 +295,9 @@ function resetStats() {
 }
 
 function showNameInputs() {
-    numPlayers = parseInt(numPlayersSelect.value, 10);
-
+    numPlayers = parseInt(numPlayersSelect.value);
     if (numPlayers < 4 || numPlayers > 10) {
-        showMessage('El nombre de jugadors ha de ser entre 4 i 10', 'error');
+        showMessage('El número de jugadores debe ser entre 4 y 10', 'error');
         return;
     }
 
