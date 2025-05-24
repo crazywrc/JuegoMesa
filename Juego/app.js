@@ -300,6 +300,7 @@ function showNameInputs() {
         showMessage('El número de jugadores debe ser entre 4 y 10', 'error');
         return;
     }
+
     namesContainer.innerHTML = '';
     for (let i = 1; i <= numPlayers; i++) {
         const input = document.createElement('input');
