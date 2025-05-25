@@ -80,7 +80,7 @@
             text-align: center;
         }
 
-        .setup-box p {
+        .setup-box p:not(.role-name) {
             margin-bottom: 20px;
             color: #4a5568;
             font-size: 1.1em;
@@ -791,6 +791,10 @@
                 <div class="stat-box">
                     <div class="stat-label">Correctas</div>
                     <div class="stat-value" id="correctAnswers">0</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Incorrectas</div>
+                    <div class="stat-value" id="incorrectAnswers">0</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-label">Racha</div>
