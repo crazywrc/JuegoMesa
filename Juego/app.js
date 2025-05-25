@@ -22,6 +22,11 @@ const generateBtnText = document.getElementById('generateBtnText');
 const apiSetupScreen = document.getElementById('apiSetupScreen');
 const playerSetupScreen = document.getElementById('playerSetupScreen');
 const topicsSetupScreen = document.getElementById('topicsSetupScreen');
+const rolesScreen = document.getElementById('rolesScreen');
+const rolePlayerNameEl = document.getElementById('currentPlayerRoleName');
+const roleInfoEl = document.getElementById('roleInfo');
+const showRoleBtn = document.getElementById('showRoleBtn');
+const hideRoleBtn = document.getElementById('hideRoleBtn');
 const gameScreen = document.getElementById('gameScreen');
 
 const apiKeyNextBtn = document.getElementById('apiKeyNextBtn');
@@ -33,6 +38,11 @@ let players = [];
 let numPlayers = 0;
 const numPlayersSelect = document.getElementById('numPlayers');
 const namesContainer = document.getElementById('namesContainer');
+
+// Roles
+let playerRoles = {};
+let impostorNames = [];
+let currentRoleIndex = 0;
 
 // Elementos de estadísticas
 const totalQuestionsEl = document.getElementById('totalQuestions');
@@ -70,6 +80,8 @@ startGameBtn.addEventListener('click', handlePlayerSetupAndStart);
 globalDifficulty.addEventListener('change', handleGlobalDifficultyChange);
 applyGlobalBtn.addEventListener('click', applyGlobalDifficulty);
 playerNextBtn.addEventListener('click', handlePlayerNext);
+showRoleBtn.addEventListener('click', revealRole);
+hideRoleBtn.addEventListener('click', hideRoleAndNext);
 
 // Cargar datos guardados
 loadSavedData();
@@ -366,23 +378,95 @@ function handlePlayerSetupAndStart() {
     // Guardar configuración final
     savePlayersConfig();
     saveTopicsConfig();
-    
-    // Iniciar el juego
+
+    // Asignar roles y mostrar pantalla de roles
+    assignRoles();
     topicsSetupScreen.style.display = 'none';
+    rolesScreen.style.display = 'block';
+
+    currentRoleIndex = 0;
+    rolePlayerNameEl.textContent = players[currentRoleIndex];
+    roleInfoEl.style.display = 'none';
+    roleInfoEl.textContent = '';
+    showRoleBtn.style.display = 'inline-block';
+    hideRoleBtn.style.display = 'none';
+}
+
+function assignRoles() {
+    playerRoles = {};
+    impostorNames = [];
+
+    let impostorCount = 1;
+    if (numPlayers >= 6 && numPlayers <= 7) {
+        impostorCount = 2;
+    } else if (numPlayers >= 8) {
+        impostorCount = 3;
+    }
+
+    const indices = Array.from({ length: numPlayers }, (_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+
+    const impostorIndices = indices.slice(0, impostorCount);
+
+    players.forEach((name, idx) => {
+        if (impostorIndices.includes(idx)) {
+            playerRoles[name] = { role: 'saboteador' };
+            impostorNames.push(name);
+        } else {
+            playerRoles[name] = { role: 'buscador' };
+        }
+    });
+}
+
+function revealRole() {
+    const player = players[currentRoleIndex];
+    const role = playerRoles[player].role;
+    let text = '';
+
+    if (role === 'saboteador') {
+        const others = impostorNames.filter(n => n !== player);
+        text = others.length
+            ? `Eres <strong>Saboteador del Conocimiento</strong>. Los otros saboteadores son: ${others.join(', ')}`
+            : 'Eres el <strong>Saboteador del Conocimiento</strong>.';
+    } else {
+        text = 'Eres <strong>Buscador de la Sabiduría</strong>.';
+    }
+
+    roleInfoEl.innerHTML = text;
+    roleInfoEl.style.display = 'block';
+    showRoleBtn.style.display = 'none';
+    hideRoleBtn.style.display = 'inline-block';
+}
+
+function hideRoleAndNext() {
+    roleInfoEl.style.display = 'none';
+    roleInfoEl.textContent = '';
+    showRoleBtn.style.display = 'inline-block';
+    hideRoleBtn.style.display = 'none';
+
+    currentRoleIndex++;
+    if (currentRoleIndex < players.length) {
+        rolePlayerNameEl.textContent = players[currentRoleIndex];
+    } else {
+        rolesScreen.style.display = 'none';
+        startGame();
+    }
+}
+
+function startGame() {
     gameScreen.style.display = 'block';
-    
-    // Habilitar el botón de generar pregunta
     generateBtn.disabled = false;
-    
-    // Mostrar mensaje de bienvenida
+
     const enabledTopicNames = availableTopics
         .filter(topic => topicsConfig[topic.id].enabled)
         .map(topic => topic.name)
         .join(', ');
-    
+
     showMessage(`¡Juego iniciado! Jugadores: ${players.join(', ')}. Temas activos: ${enabledTopicNames}`, 'success');
-    
-    // Actualizar el texto inicial del juego
+
     questionText.innerHTML = `
         <div style="text-align: center; color: #4a5568; line-height: 1.6;">
             <h3 style="color: #2d3748; margin-bottom: 20px;">🎯 ¡Bienvenidos al Juego de Trivia!</h3>
