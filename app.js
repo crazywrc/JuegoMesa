@@ -98,55 +98,50 @@ loadSavedData();
 
 function loadSavedData() {
     // Cargar API key
-    chrome.storage.sync.get(['apiKey'], (result) => {
-        if (result.apiKey) {
-            apiKey = result.apiKey;
-            apiKeyInput.value = result.apiKey;
-        } else {
-            apiSetupScreen.style.display = 'block';
-        }
-    });
+    const storedApiKey = localStorage.getItem('apiKey');
+    if (storedApiKey) {
+        apiKey = storedApiKey;
+        apiKeyInput.value = storedApiKey;
+    } else {
+        apiSetupScreen.style.display = 'block';
+    }
 
     // Cargar estadísticas
-    chrome.storage.local.get(['stats'], (result) => {
-        if (result.stats) {
-            stats = result.stats;
-            // Asegurar que la nueva propiedad exista
-            if (typeof stats.incorrectAnswers !== 'number') {
-                stats.incorrectAnswers = 0;
-            }
-            updateStatsDisplay();
-            resetBtn.style.display = 'inline-block';
+    const storedStats = localStorage.getItem('stats');
+    if (storedStats) {
+        stats = JSON.parse(storedStats);
+        if (typeof stats.incorrectAnswers !== 'number') {
+            stats.incorrectAnswers = 0;
         }
-    });
+        updateStatsDisplay();
+        resetBtn.style.display = 'inline-block';
+    }
 
     // Cargar configuración de jugadores
-    chrome.storage.sync.get(['players', 'numPlayers'], (result) => {
-        if (result.players && result.numPlayers) {
-            players = result.players;
-            numPlayers = result.numPlayers;
-        }
-    });
+    const storedPlayers = localStorage.getItem('players');
+    const storedNumPlayers = localStorage.getItem('numPlayers');
+    if (storedPlayers && storedNumPlayers) {
+        players = JSON.parse(storedPlayers);
+        numPlayers = parseInt(storedNumPlayers, 10);
+    }
 
     // Cargar configuración de temas
-    chrome.storage.sync.get(['topicsConfig'], (result) => {
-        if (result.topicsConfig) {
-            topicsConfig = result.topicsConfig;
-        }
-    });
+    const storedTopics = localStorage.getItem('topicsConfig');
+    if (storedTopics) {
+        topicsConfig = JSON.parse(storedTopics);
+    }
 }
 
 function handleApiKeyStep() {
     const inputApiKey = apiKeyInput.value.trim();
     if (inputApiKey) {
         apiKey = inputApiKey;
-        chrome.storage.sync.set({ apiKey: apiKey }, () => {
-            showMessage('API Key guardada correctamente.', 'success');
-            apiSetupScreen.style.display = 'none';
-            playerSetupScreen.style.display = 'block';
-            updatePlayerNameInputs();
-            loadPlayersConfig(); // Cargar nombres guardados
-        });
+        localStorage.setItem('apiKey', apiKey);
+        showMessage('API Key guardada correctamente.', 'success');
+        apiSetupScreen.style.display = 'none';
+        playerSetupScreen.style.display = 'block';
+        updatePlayerNameInputs();
+        loadPlayersConfig();
     } else {
         showMessage('Por favor, introduce una API Key válida.', 'error');
     }
@@ -264,34 +259,29 @@ function handlePlayerNext() {
 }
 
 function loadPlayersConfig() {
-    chrome.storage.sync.get(['players', 'numPlayers'], (result) => {
-        if (result.players && result.numPlayers) {
-            const savedPlayers = result.players;
-            const savedNumPlayers = result.numPlayers;
-            
-            // Actualizar el selector de número de jugadores si es diferente
-            if (savedNumPlayers !== parseInt(numPlayersSelect.value)) {
-                numPlayersSelect.value = savedNumPlayers;
-                numPlayers = savedNumPlayers;
-                
-                // Regenerar los inputs con el número correcto
-                updatePlayerNameInputs();
-            }
-            
-            // Rellenar los nombres guardados
-            setTimeout(() => {
-                savedPlayers.forEach((name, index) => {
-                    const input = document.getElementById(`playerName${index + 1}`);
-                    if (input && name) {
-                        input.value = name;
-                    }
-                });
-                
-                // Actualizar el array de jugadores
-                players = [...savedPlayers];
-            }, 100);
+    const storedPlayers = localStorage.getItem('players');
+    const storedNumPlayers = localStorage.getItem('numPlayers');
+    if (storedPlayers && storedNumPlayers) {
+        const savedPlayers = JSON.parse(storedPlayers);
+        const savedNumPlayers = parseInt(storedNumPlayers, 10);
+
+        if (savedNumPlayers !== parseInt(numPlayersSelect.value)) {
+            numPlayersSelect.value = savedNumPlayers;
+            numPlayers = savedNumPlayers;
+            updatePlayerNameInputs();
         }
-    });
+
+        setTimeout(() => {
+            savedPlayers.forEach((name, index) => {
+                const input = document.getElementById(`playerName${index + 1}`);
+                if (input && name) {
+                    input.value = name;
+                }
+            });
+
+            players = [...savedPlayers];
+        }, 100);
+    }
 }
 
 function initializeTopicsConfig() {
@@ -538,33 +528,29 @@ function startGame() {
 }
 
 function saveTopicsConfig() {
-    chrome.storage.sync.set({ topicsConfig: topicsConfig });
+    localStorage.setItem('topicsConfig', JSON.stringify(topicsConfig));
 }
 
 function loadTopicsConfig() {
-    chrome.storage.sync.get(['topicsConfig'], (result) => {
-        if (result.topicsConfig) {
-            topicsConfig = result.topicsConfig;
-            // Actualizar la UI con la configuración cargada
-            Object.keys(topicsConfig).forEach(topicId => {
-                const checkbox = document.getElementById(`enable-${topicId}`);
-                const difficultySelect = document.getElementById(`difficulty-${topicId}`);
-                
-                if (checkbox && difficultySelect) {
-                    checkbox.checked = topicsConfig[topicId].enabled;
-                    difficultySelect.value = topicsConfig[topicId].difficulty;
-                    updateTopicCardVisual(topicId);
-                }
-            });
-        }
-    });
+    const storedTopics = localStorage.getItem('topicsConfig');
+    if (storedTopics) {
+        topicsConfig = JSON.parse(storedTopics);
+        Object.keys(topicsConfig).forEach(topicId => {
+            const checkbox = document.getElementById(`enable-${topicId}`);
+            const difficultySelect = document.getElementById(`difficulty-${topicId}`);
+
+            if (checkbox && difficultySelect) {
+                checkbox.checked = topicsConfig[topicId].enabled;
+                difficultySelect.value = topicsConfig[topicId].difficulty;
+                updateTopicCardVisual(topicId);
+            }
+        });
+    }
 }
 
 function savePlayersConfig() {
-    chrome.storage.sync.set({ 
-        players: players,
-        numPlayers: numPlayers 
-    });
+    localStorage.setItem('players', JSON.stringify(players));
+    localStorage.setItem('numPlayers', numPlayers.toString());
 }
 
 function showMessage(message, type) {
@@ -776,7 +762,7 @@ function updateStatsDisplay() {
 }
 
 function saveStats() {
-    chrome.storage.local.set({ stats: stats });
+    localStorage.setItem('stats', JSON.stringify(stats));
 }
 
 function restartGame() {
