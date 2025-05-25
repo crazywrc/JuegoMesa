@@ -59,7 +59,7 @@ const topicsContainer = document.getElementById('topicsContainer');
 // Event listeners
 generateBtn.addEventListener('click', generateQuestion);
 showAnswerBtn.addEventListener('click', showAnswer);
-resetBtn.addEventListener('click', resetStats);
+resetBtn.addEventListener('click', restartGame);
 apiKeyInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleApiKeyStep();
 });
@@ -94,6 +94,14 @@ function loadSavedData() {
         }
     });
 
+    // Cargar configuración de jugadores
+    chrome.storage.sync.get(['players', 'numPlayers'], (result) => {
+        if (result.players && result.numPlayers) {
+            players = result.players;
+            numPlayers = result.numPlayers;
+        }
+    });
+
     // Cargar configuración de temas
     chrome.storage.sync.get(['topicsConfig'], (result) => {
         if (result.topicsConfig) {
@@ -111,6 +119,7 @@ function handleApiKeyStep() {
             apiSetupScreen.style.display = 'none';
             playerSetupScreen.style.display = 'block';
             updatePlayerNameInputs();
+            loadPlayersConfig(); // Cargar nombres guardados
         });
     } else {
         showMessage('Por favor, introduce una API Key válida.', 'error');
@@ -118,7 +127,19 @@ function handleApiKeyStep() {
 }
 
 function updatePlayerNameInputs() {
-    numPlayers = parseInt(numPlayersSelect.value);
+    const previousNumPlayers = namesContainer.children.length;
+    const newNumPlayers = parseInt(numPlayersSelect.value);
+    
+    // Guardar los nombres actuales antes de regenerar
+    const currentNames = [];
+    for (let i = 0; i < previousNumPlayers; i++) {
+        const input = document.getElementById(`playerName${i + 1}`);
+        if (input) {
+            currentNames[i] = input.value.trim();
+        }
+    }
+    
+    numPlayers = newNumPlayers;
     namesContainer.innerHTML = '';
     
     for (let i = 1; i <= numPlayers; i++) {
@@ -132,6 +153,11 @@ function updatePlayerNameInputs() {
         input.placeholder = `Nombre del jugador ${i}`;
         input.required = true;
         
+        // Restaurar el nombre si existía
+        if (currentNames[i - 1]) {
+            input.value = currentNames[i - 1];
+        }
+        
         inputWrapper.appendChild(input);
         namesContainer.appendChild(inputWrapper);
     }
@@ -141,6 +167,9 @@ function handlePlayerNext() {
     // Validar que los nombres estén completos
     let allNamesValid = true;
     const nameInputs = document.querySelectorAll('.player-name-input');
+    
+    // Reiniciar el array de jugadores para asegurar el tamaño correcto
+    players = [];
     
     nameInputs.forEach((input, index) => {
         const name = input.value.trim();
@@ -158,6 +187,9 @@ function handlePlayerNext() {
         return;
     }
     
+    // Actualizar numPlayers con el valor actual
+    numPlayers = players.length;
+    
     // Guardar configuración de jugadores
     savePlayersConfig();
     
@@ -167,6 +199,37 @@ function handlePlayerNext() {
     
     // Inicializar configuración de temas
     initializeTopicsConfig();
+}
+
+function loadPlayersConfig() {
+    chrome.storage.sync.get(['players', 'numPlayers'], (result) => {
+        if (result.players && result.numPlayers) {
+            const savedPlayers = result.players;
+            const savedNumPlayers = result.numPlayers;
+            
+            // Actualizar el selector de número de jugadores si es diferente
+            if (savedNumPlayers !== parseInt(numPlayersSelect.value)) {
+                numPlayersSelect.value = savedNumPlayers;
+                numPlayers = savedNumPlayers;
+                
+                // Regenerar los inputs con el número correcto
+                updatePlayerNameInputs();
+            }
+            
+            // Rellenar los nombres guardados
+            setTimeout(() => {
+                savedPlayers.forEach((name, index) => {
+                    const input = document.getElementById(`playerName${index + 1}`);
+                    if (input && name) {
+                        input.value = name;
+                    }
+                });
+                
+                // Actualizar el array de jugadores
+                players = [...savedPlayers];
+            }, 100);
+        }
+    });
 }
 
 function initializeTopicsConfig() {
@@ -382,15 +445,13 @@ async function generateQuestion() {
     answerBox.style.display = 'none';
     showAnswerBtn.disabled = true;
 
-    // Obtener temas y dificultades habilitados
+    // Obtener temas habilitados
     const enabledTopics = availableTopics.filter(topic => topicsConfig[topic.id]?.enabled);
-    const topicNames = enabledTopics.map(topic => topic.name.toLowerCase()).join(', ');
     
-    // Construir lista de dificultades por tema
-    const topicDifficulties = enabledTopics.map(topic => {
-        const difficulty = topicsConfig[topic.id].difficulty;
-        return `${topic.name}: ${difficulty}`;
-    }).join(', ');
+    // Seleccionar aleatoriamente un tema de los habilitados
+    const randomIndex = Math.floor(Math.random() * enabledTopics.length);
+    const selectedTopic = enabledTopics[randomIndex];
+    const selectedDifficulty = topicsConfig[selectedTopic.id].difficulty;
 
     try {
         const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -403,22 +464,20 @@ async function generateQuestion() {
                 model: 'gpt-3.5-turbo',
                 messages: [{
                     role: 'system',
-                    content: 'Eres un experto en cultura general que genera preguntas educativas interesantes. Debes generar preguntas variadas y educativas basadas en los temas y dificultades específicas proporcionadas.'
+                    content: 'Eres un experto en cultura general que genera preguntas educativas interesantes. Debes generar preguntas del tema específico y dificultad exacta que se te solicita.'
                 }, {
                     role: 'user',
-                    content: `Genera una pregunta de cultura general de uno de estos temas específicos: ${topicNames}.
-                    
-                    Usa las dificultades configuradas para cada tema: ${topicDifficulties}
+                    content: `Genera una pregunta de cultura general específicamente del tema "${selectedTopic.name}" con dificultad "${selectedDifficulty}".
                     
                     Responde ÚNICAMENTE en el siguiente formato JSON:
                     {
                         "pregunta": "La pregunta aquí",
                         "respuesta": "La respuesta detallada aquí (2-3 oraciones explicativas)",
-                        "dificultad": "muy-facil" o "facil" o "medio" o "dificil" o "muy-dificil",
-                        "categoria": "${topicNames.split(', ')[0]}" (usar uno de los temas habilitados)
+                        "dificultad": "${selectedDifficulty}",
+                        "categoria": "${selectedTopic.name}"
                     }
                     
-                    La dificultad debe corresponder exactamente a la configurada para el tema elegido.
+                    La pregunta debe ser específicamente del tema "${selectedTopic.name}" y tener la dificultad "${selectedDifficulty}".
                     La respuesta debe ser informativa, educativa y contener datos interesantes.
                     No incluyas texto adicional, solo el JSON.`
                 }],
@@ -565,8 +624,9 @@ function saveStats() {
     chrome.storage.local.set({ stats: stats });
 }
 
-function resetStats() {
-    if (confirm('¿Estás seguro de que quieres reiniciar todas las estadísticas?')) {
+function restartGame() {
+    if (confirm('¿Estás seguro de que quieres reiniciar la partida? Se reiniciarán las estadísticas pero se mantendrá la configuración de jugadores y temas.')) {
+        // Reiniciar estadísticas
         stats = {
             totalQuestions: 0,
             correctAnswers: 0,
@@ -574,6 +634,24 @@ function resetStats() {
         };
         updateStatsDisplay();
         saveStats();
-        showMessage('Estadísticas reiniciadas', 'success');
+        
+        // Ocultar pantalla de juego
+        gameScreen.style.display = 'none';
+        
+        // Mostrar pantalla de configuración de jugadores
+        playerSetupScreen.style.display = 'block';
+        
+        // Cargar y mostrar la configuración guardada
+        updatePlayerNameInputs();
+        loadPlayersConfig();
+        
+        // Resetear estado del juego
+        currentQuestion = null;
+        answerBox.style.display = 'none';
+        showAnswerBtn.disabled = true;
+        generateBtn.disabled = true;
+        
+        // Mostrar mensaje
+        showMessage('Partida reiniciada. Las estadísticas se han restablecido. Configura los jugadores para comenzar de nuevo.', 'success');
     }
 }
