@@ -599,3 +599,905 @@ pregunta,respuesta,tema,dificultad
 ¿Qué caracteriza al ecological dynamics framework?,Interacción organismo-ambiente en deportes,Deportes,muy-dificil
 ¿En qué consiste la periodization of recovery?,Planificación sistemática de la recuperación,Deportes,muy-dificil
 ¿Cuál es el concepto de antifragility en deportes?,Fortalecimiento through stress adaptativo,Deportes,muy-dificil
+¿Qué significa CPU?,Central Processing Unit,Tecnologia,muy-facil
+¿Para qué sirve Spotify?,Para escuchar música en streaming,Tecnologia,muy-facil
+¿Qué es TikTok?,Una aplicación de videos cortos,Tecnologia,muy-facil
+¿Cuál es el sistema operativo de Android?,Android,Tecnologia,muy-facil
+¿Para qué sirve Zoom?,Para hacer videollamadas,Tecnologia,muy-facil
+¿Qué es Amazon?,Una tienda online,Tecnologia,muy-facil
+¿Cuál es la empresa creadora de iPhone?,Apple,Tecnologia,muy-facil
+¿Para qué sirve una memoria USB?,Para almacenar archivos,Tecnologia,muy-facil
+¿Qué es Twitter?,Una red social de mensajes cortos,Tecnologia,muy-facil
+¿Cuál es el buscador más usado?,Google,Tecnologia,muy-facil
+¿Para qué sirve PayPal?,Para hacer pagos online,Tecnologia,muy-facil
+¿Qué es Minecraft?,Un videojuego de construcción,Tecnologia,muy-facil
+¿Cuál es la red social profesional más conocida?,LinkedIn,Tecnologia,muy-facil
+¿Para qué sirve un mouse?,Para controlar el cursor en pantalla,Tecnologia,muy-facil
+¿Qué es Discord?,Una aplicación de chat para gamers,Tecnologia,muy-facil
+¿Cuál es la empresa creadora de Windows?,Microsoft,Tecnologia,muy-facil
+¿Para qué sirve un teclado?,Para escribir en computadora,Tecnologia,muy-facil
+¿Qué es Uber?,Una aplicación de transporte,Tecnologia,muy-facil
+¿Cuál es el navegador de Apple?,Safari,Tecnologia,muy-facil
+¿Para qué sirve iTunes?,Para gestionar música y multimedia,Tecnologia,muy-facil
+¿Qué es Tesla?,Una empresa de coches eléctricos,Tecnologia,muy-facil
+¿Cuál es la plataforma de videos más grande?,YouTube,Tecnologia,muy-facil
+¿Para qué sirve Skype?,Para hacer llamadas por internet,Tecnologia,muy-facil
+¿Qué es Snapchat?,Una aplicación de fotos temporales,Tecnologia,muy-facil
+¿Cuál es el sistema de pago de Apple?,Apple Pay,Tecnologia,muy-facil
+¿Para qué sirve Google Maps?,Para navegación y mapas,Tecnologia,muy-facil
+¿Qué es Twitch?,Una plataforma de streaming de videojuegos,Tecnologia,muy-facil
+¿Cuál es la moneda digital más conocida?,Bitcoin,Tecnologia,muy-facil
+¿Para qué sirve Dropbox?,Para almacenar archivos en la nube,Tecnologia,muy-facil
+¿Qué es Reddit?,Una plataforma de comunidades y discusión,Tecnologia,muy-facil
+¿Qué significa CSS?,Cascading Style Sheets,Tecnologia,facil
+¿Para qué sirve Python?,Para programación y desarrollo de software,Tecnologia,facil
+¿Qué es un pixel?,La unidad más pequeña de una imagen digital,Tecnologia,facil
+¿Cuál es la diferencia entre HTTP y FTP?,HTTP para páginas web y FTP para transferir archivos,Tecnologia,facil
+¿Para qué sirve MySQL?,Para gestión de bases de datos,Tecnologia,facil
+¿Qué es la realidad aumentada?,Superposición de elementos digitales sobre el mundo real,Tecnologia,facil
+¿Cuál es la función de un disco duro?,Almacenar datos permanentemente,Tecnologia,facil
+¿Para qué sirve Adobe Photoshop?,Para editar y manipular imágenes,Tecnologia,facil
+¿Qué es un malware?,Software malicioso que daña sistemas,Tecnologia,facil
+¿Cuál es la diferencia entre WiFi y Ethernet?,WiFi es inalámbrico y Ethernet usa cables,Tecnologia,facil
+¿Para qué sirve Java?,Para desarrollo de aplicaciones multiplataforma,Tecnologia,facil
+¿Qué es la ciberseguridad?,Protección de sistemas digitales contra amenazas,Tecnologia,facil
+¿Cuál es la función de la tarjeta gráfica?,Procesar y mostrar imágenes en pantalla,Tecnologia,facil
+¿Para qué sirve Slack?,Para comunicación empresarial en equipo,Tecnologia,facil
+¿Qué es el phishing?,Técnica para robar información personal,Tecnologia,facil
+¿Cuál es la diferencia entre SSD y HDD?,SSD es más rápido y sin partes móviles,Tecnologia,facil
+¿Para qué sirve Git?,Para control de versiones en programación,Tecnologia,facil
+¿Qué es un podcast?,Programa de audio distribuido digitalmente,Tecnologia,facil
+¿Cuál es la función del BIOS?,Sistema básico de entrada y salida del computador,Tecnologia,facil
+¿Para qué sirve Microsoft Office?,Para crear documentos hojas de cálculo y presentaciones,Tecnologia,facil
+¿Qué es el streaming?,Transmisión de contenido multimedia en tiempo real,Tecnologia,facil
+¿Cuál es la diferencia entre hardware y software?,Hardware son componentes físicos software son programas,Tecnologia,facil
+¿Para qué sirve Linux?,Sistema operativo de código abierto,Tecnologia,facil
+¿Qué es un hashtag?,Etiqueta para categorizar contenido en redes sociales,Tecnologia,facil
+¿Cuál es la función de un router?,Dirigir tráfico de red entre dispositivos,Tecnologia,facil
+¿Para qué sirve Selenium?,Para automatización de pruebas web,Tecnologia,facil
+¿Qué es la gamificación?,Aplicar elementos de juego en contextos no lúdicos,Tecnologia,facil
+¿Cuál es la diferencia entre frontend y backend?,Frontend es interfaz de usuario backend es servidor,Tecnologia,facil
+¿Para qué sirve MongoDB?,Base de datos NoSQL orientada a documentos,Tecnologia,facil
+¿Qué es el Internet de las Cosas?,Red de dispositivos conectados que intercambian datos,Tecnologia,facil
+¿Qué es DevSecOps?,Integración de seguridad en el ciclo DevOps,Tecnologia,medio
+¿Para qué sirve Terraform?,Para infraestructura como código,Tecnologia,medio
+¿Qué es la programación funcional?,Paradigma basado en funciones matemáticas,Tecnologia,medio
+¿Cuál es la diferencia entre GraphQL y REST?,GraphQL permite consultas flexibles REST usa endpoints fijos,Tecnologia,medio
+¿Para qué sirve Apache Kafka?,Para streaming de datos en tiempo real,Tecnologia,medio
+¿Qué es el edge computing?,Procesamiento de datos cerca del origen,Tecnologia,medio
+¿Cuál es la función de un CDN?,Red de distribución de contenido geográficamente distribuida,Tecnologia,medio
+¿Para qué sirve Elasticsearch?,Motor de búsqueda y análisis distribuido,Tecnologia,medio
+¿Qué es la programación orientada a eventos?,Paradigma donde el flujo se determina por eventos,Tecnologia,medio
+¿Cuál es la diferencia entre SQL y NoSQL?,SQL usa esquemas fijos NoSQL es flexible,Tecnologia,medio
+¿Para qué sirve Jenkins?,Para integración y entrega continua,Tecnologia,medio
+¿Qué es la arquitectura serverless?,Computación sin gestión de servidores,Tecnologia,medio
+¿Cuál es la función de un load balancer?,Distribuir carga entre múltiples servidores,Tecnologia,medio
+¿Para qué sirve React?,Biblioteca para crear interfaces de usuario,Tecnologia,medio
+¿Qué es la computación cuántica?,Computación usando principios de mecánica cuántica,Tecnologia,medio
+¿Cuál es la diferencia entre TCP e UDP?,TCP garantiza entrega UDP es más rápido,Tecnologia,medio
+¿Para qué sirve Docker Compose?,Para definir aplicaciones multi-contenedor,Tecnologia,medio
+¿Qué es la metodología Agile?,Enfoque iterativo de desarrollo de software,Tecnologia,medio
+¿Cuál es la función de Prometheus?,Sistema de monitoreo y alertas,Tecnologia,medio
+¿Para qué sirve Ansible?,Para automatización de configuración y despliegue,Tecnologia,medio
+¿Qué es la observabilidad?,Capacidad de entender estado interno de sistemas,Tecnologia,medio
+¿Cuál es la diferencia entre PaaS y SaaS?,PaaS es plataforma SaaS es software como servicio,Tecnologia,medio
+¿Para qué sirve Apache Spark?,Para procesamiento distribuido de big data,Tecnologia,medio
+¿Qué es la inmutabilidad en programación?,Objetos que no pueden cambiar después de creación,Tecnologia,medio
+¿Cuál es la función de Service Mesh?,Capa de infraestructura para comunicación entre servicios,Tecnologia,medio
+¿Para qué sirve Kubernetes Helm?,Gestor de paquetes para Kubernetes,Tecnologia,medio
+¿Qué es la latencia en redes?,Tiempo que tarda un dato en viajar,Tecnologia,medio
+¿Cuál es la diferencia entre monolito y microservicios?,Monolito es aplicación única microservicios son independientes,Tecnologia,medio
+¿Para qué sirve Apache Airflow?,Para orquestación de flujos de trabajo,Tecnologia,medio
+¿Qué es la teoría de colas en sistemas?,Estudio de líneas de espera en procesamiento,Tecnologia,dificil
+¿Para qué sirve el algoritmo de Dijkstra?,Para encontrar el camino más corto en grafos,Tecnologia,dificil
+¿Qué es la consistencia eventual?,Modelo donde datos convergen a consistencia,Tecnologia,dificil
+¿Cuál es el problema de las dos generales?,Problema de consenso en sistemas distribuidos,Tecnologia,dificil
+¿Para qué sirve el patrón CQRS?,Separar comandos de consultas en arquitectura,Tecnologia,dificil
+¿Qué es la programación reactiva?,Paradigma basado en flujos de datos asincrónicos,Tecnologia,dificil
+¿Cuál es la función del algoritmo de Paxos?,Conseguir consenso en sistemas distribuidos,Tecnologia,dificil
+¿Para qué sirve el Event Sourcing?,Almacenar eventos en lugar de estado actual,Tecnologia,dificil
+¿Qué es la complejidad ciclomática?,Métrica de complejidad de código,Tecnologia,dificil
+¿Cuál es el teorema de Brewer?,Imposibilidad de garantizar CAP simultáneamente,Tecnologia,dificil
+¿Para qué sirve la técnica de Blue-Green Deployment?,Estrategia de despliegue sin downtime,Tecnologia,dificil
+¿Qué es la programación por contrato?,Especificar precondiciones y postcondiciones,Tecnologia,dificil
+¿Cuál es la función del algoritmo de Raft?,Consenso distribuido más simple que Paxos,Tecnologia,dificil
+¿Para qué sirve la técnica de Database Sharding?,Particionamiento horizontal de bases de datos,Tecnologia,dificil
+¿Qué es el polimorfismo paramétrico?,Código que opera sobre múltiples tipos,Tecnologia,dificil
+¿Cuál es el principio de responsabilidad única?,Cada clase debe tener una sola razón para cambiar,Tecnologia,dificil
+¿Para qué sirve el patrón Command?,Encapsular una petición como objeto,Tecnologia,dificil
+¿Qué es la inversión de dependencias?,Depender de abstracciones no de concreciones,Tecnologia,dificil
+¿Cuál es la función del algoritmo de MapReduce?,Procesamiento distribuido de grandes datasets,Tecnologia,dificil
+¿Para qué sirve la técnica de Circuit Breaker?,Prevenir cascadas de fallos en sistemas,Tecnologia,dificil
+¿Qué es la programación concurrente?,Múltiples tareas ejecutándose simultáneamente,Tecnologia,dificil
+¿Cuál es el concepto de idempotencia?,Operación que produce el mismo resultado repetidamente,Tecnologia,dificil
+¿Para qué sirve el patrón Saga?,Gestionar transacciones distribuidas,Tecnologia,dificil
+¿Qué es la evaluación perezosa?,Retrasar evaluación hasta que sea necesaria,Tecnologia,dificil
+¿Cuál es la función de los sistemas de tipos?,Verificar corrección de programas,Tecnologia,dificil
+¿Para qué sirve la técnica de Eventual Consistency?,Consistencia que se alcanza eventualmente,Tecnologia,dificil
+¿Qué es la computación paralela?,Ejecución simultánea de múltiples procesos,Tecnologia,dificil
+¿Cuál es el principio de sustitución de Liskov?,Objetos derivados deben ser sustituibles,Tecnologia,dificil
+¿Para qué sirve el algoritmo de Byzantine Generals?,Consenso en presencia de nodos maliciosos,Tecnologia,dificil
+¿Qué es la reflexión computacional?,Capacidad de examinar y modificar estructura del programa,Tecnologia,dificil
+¿Cuál es la función de los sistemas de tipos dependientes?,Tipos que dependen de valores,Tecnologia,muy-dificil
+¿Para qué sirve la teoría de categorías en programación?,Fundamento matemático para lenguajes funcionales,Tecnologia,muy-dificil
+¿Qué es la correspondencia de Curry-Howard?,Relación entre proposiciones lógicas y tipos,Tecnologia,muy-dificil
+¿Cuál es el problema de la parada?,Imposibilidad de determinar si programa termina,Tecnologia,muy-dificil
+¿Para qué sirve el cálculo lambda?,Base formal de programación funcional,Tecnologia,muy-dificil
+¿Qué es la semántica operacional?,Especificación formal del significado de programas,Tecnologia,muy-dificil
+¿Cuál es la función de los sistemas de inferencia de tipos?,Deducir automáticamente tipos sin anotaciones,Tecnologia,muy-dificil
+¿Para qué sirve la lógica de Hoare?,Verificación formal de corrección de programas,Tecnologia,muy-dificil
+¿Qué es la computación probabilística?,Algoritmos que usan aleatoriedad,Tecnologia,muy-dificil
+¿Cuál es el concepto de mónadas en programación?,Estructura que encapsula computaciones con contexto,Tecnologia,muy-dificil
+¿Para qué sirve la teoría de juegos algorítmica?,Análisis de algoritmos en entornos estratégicos,Tecnologia,muy-dificil
+¿Qué es la complejidad parameterizada?,Análisis de complejidad con múltiples parámetros,Tecnologia,muy-dificil
+¿Cuál es la función de la verificación por modelo?,Verificación automática de sistemas mediante estados,Tecnologia,muy-dificil
+¿Para qué sirve el cálculo de procesos?,Modelado formal de sistemas concurrentes,Tecnologia,muy-dificil
+¿Qué es la computación reversible?,Computación donde operaciones pueden deshacerse,Tecnologia,muy-dificil
+¿Cuál es el concepto de tipos lineales?,Sistemas de tipos que rastrean uso de recursos,Tecnologia,muy-dificil
+¿Para qué sirve la lógica temporal?,Razonamiento sobre propiedades que cambian en tiempo,Tecnologia,muy-dificil
+¿Qué es la semántica denotacional?,Asignación de significado matemático a programas,Tecnologia,muy-dificil
+¿Cuál es la función de los autómatas celulares?,Modelos de computación distribuida local,Tecnologia,muy-dificil
+¿Para qué sirve la teoría de la complejidad descriptiva?,Caracterizar complejidad mediante lógica,Tecnologia,muy-dificil
+¿Qué es la computación bioinspirada?,Algoritmos basados en procesos biológicos,Tecnologia,muy-dificil
+¿Cuál es el concepto de efectos computacionales?,Modelado formal de operaciones no puras,Tecnologia,muy-dificil
+¿Para qué sirve la lógica difusa en programación?,Razonamiento con incertidumbre y vaguedad,Tecnologia,muy-dificil
+¿Qué es la programación por restricciones?,Paradigma declarativo basado en restricciones,Tecnologia,muy-dificil
+¿Cuál es la función de los sistemas de reescritura?,Transformación sistemática de términos,Tecnologia,muy-dificil
+¿Para qué sirve la teoría de la información algorítmica?,Medida de información contenida en objetos,Tecnologia,muy-dificil
+¿Qué es la computación evolutiva?,Algoritmos basados en evolución natural,Tecnologia,muy-dificil
+¿Cuál es el concepto de coalgebras en CS?,Estructuras duales a álgebras para sistemas dinámicos,Tecnologia,muy-dificil
+¿Para qué sirve la lógica modal en verificación?,Razonamiento sobre posibilidad y necesidad,Tecnologia,muy-dificil
+¿Qué es la programación con continuaciones?,Control de flujo explícito mediante continuaciones,Tecnologia,muy-dificil
+¿Cuántos días tiene febrero?,28 o 29 según el año,Social,muy-facil
+¿Cuál es el color del sol?,Amarillo,Social,muy-facil
+¿Qué animal dice miau?,Gato,Social,muy-facil
+¿Cuántas horas duerme una persona?,Entre 7-8 horas,Social,muy-facil
+¿Cuál es la comida principal del día?,Almuerzo,Social,muy-facil
+¿Qué hacemos con los dientes?,Masticar,Social,muy-facil
+¿Cuántos ojos tenemos?,Dos,Social,muy-facil
+¿Qué bebemos cuando tenemos sed?,Agua,Social,muy-facil
+¿Cuál es el primer día de la semana?,Lunes,Social,muy-facil
+¿Qué usamos para escribir?,Lápiz o bolígrafo,Social,muy-facil
+¿Cuántas manos tenemos?,Dos,Social,muy-facil
+¿Qué hacemos en el colegio?,Aprender,Social,muy-facil
+¿Cuál es la estación más fría?,Invierno,Social,muy-facil
+¿Qué necesitamos para caminar?,Piernas,Social,muy-facil
+¿Cuántos dedos hay en una mano?,Cinco,Social,muy-facil
+¿Qué usamos para ver?,Ojos,Social,muy-facil
+¿Cuál es el último mes del año?,Diciembre,Social,muy-facil
+¿Qué hacemos cuando llueve?,Nos protegemos,Social,muy-facil
+¿Cuántas ruedas tiene un coche?,Cuatro,Social,muy-facil
+¿Qué comemos en el desayuno?,Cereales pan o fruta,Social,muy-facil
+¿Cuál es la capital de tu país?,Depende del país,Social,muy-facil
+¿Qué hacemos con las manos?,Tocar y agarrar,Social,muy-facil
+¿Cuántos minutos tiene una hora?,Sesenta,Social,muy-facil
+¿Qué animal da leche?,Vaca,Social,muy-facil
+¿Cuál es el último día de la semana?,Domingo,Social,muy-facil
+¿Qué usamos para escuchar?,Oídos,Social,muy-facil
+¿Cuántas estaciones del año hay?,Cuatro,Social,muy-facil
+¿Qué hacemos en la cama?,Dormir,Social,muy-facil
+¿Cuál es el primer mes del año?,Enero,Social,muy-facil
+¿Qué necesitamos para respirar?,Aire,Social,muy-facil
+¿Qué significa democracia?,Gobierno del pueblo,Social,facil
+¿Cuándo se celebra el Día Internacional de la Mujer?,8 de marzo,Social,facil
+¿Qué es la Declaración Universal de Derechos Humanos?,Documento que establece derechos fundamentales,Social,facil
+¿Cuál es la diferencia entre público y privado?,Público es del Estado privado es de particulares,Social,facil
+¿Qué son los impuestos?,Contribuciones obligatorias al Estado,Social,facil
+¿En qué consiste el voto secreto?,Votar sin que otros sepan tu elección,Social,facil
+¿Qué es la educación obligatoria?,Enseñanza que todos deben recibir por ley,Social,facil
+¿Cuál es la función de un alcalde?,Gobernar un municipio,Social,facil
+¿Qué significa tolerancia?,Respeto hacia ideas diferentes,Social,facil
+¿En qué consiste la libertad de expresión?,Derecho a manifestar opiniones,Social,facil
+¿Qué es la seguridad social?,Sistema de protección social del Estado,Social,facil
+¿Cuál es la diferencia entre rural y urbano?,Rural es campo urbano es ciudad,Social,facil
+¿Qué son las ONG?,Organizaciones No Gubernamentales,Social,facil
+¿En qué consiste la igualdad de género?,Mismos derechos para hombres y mujeres,Social,facil
+¿Qué es el medio ambiente?,Entorno natural que nos rodea,Social,facil
+¿Cuál es la función de la policía?,Mantener el orden y la seguridad,Social,facil
+¿Qué significa solidaridad?,Apoyo mutuo entre personas,Social,facil
+¿En qué consiste la libertad de religión?,Derecho a practicar cualquier fe,Social,facil
+¿Qué es la Constitución?,Ley fundamental de un país,Social,facil
+¿Cuál es la diferencia entre derechos y deberes?,Derechos son lo que puedes exigir deberes lo que debes cumplir,Social,facil
+¿Qué son los valores cívicos?,Principios que guían la convivencia social,Social,facil
+¿En qué consiste la participación ciudadana?,Involucrarse en decisiones comunitarias,Social,facil
+¿Qué es la discriminación?,Tratar de forma injusta por características personales,Social,facil
+¿Cuál es la función del parlamento?,Hacer las leyes del país,Social,facil
+¿Qué significa diversidad cultural?,Variedad de culturas en una sociedad,Social,facil
+¿En qué consiste el estado de derecho?,Todos están sujetos a la ley,Social,facil
+¿Qué es la inmigración?,Llegada de personas de otros países,Social,facil
+¿Cuál es la diferencia entre monarquía y república?,Monarquía tiene rey república tiene presidente,Social,facil
+¿Qué son los medios de comunicación?,Canales que difunden información,Social,facil
+¿En qué consiste la justicia social?,Distribución equitativa de recursos y oportunidades,Social,facil
+¿Qué es el capital social?,Redes de relaciones entre personas en una sociedad,Social,medio
+¿En qué consiste la teoría de la modernización?,Proceso de transformación hacia sociedades industriales,Social,medio
+¿Cuál es la función de las instituciones sociales?,Estructurar y organizar la vida social,Social,medio
+¿Qué son las políticas públicas?,Acciones del gobierno para resolver problemas sociales,Social,medio
+¿En qué consiste la movilidad social?,Cambio de posición social de individuos o grupos,Social,medio
+¿Cuál es la diferencia entre cultura y sociedad?,Cultura son ideas y símbolos sociedad son relaciones,Social,medio
+¿Qué es la socialización?,Proceso de aprendizaje de normas sociales,Social,medio
+¿En qué consiste la cohesión social?,Grado de unión e integración de una sociedad,Social,medio
+¿Cuál es la función de los grupos de interés?,Influir en políticas públicas,Social,medio
+¿Qué son los movimientos sociales?,Acciones colectivas para el cambio social,Social,medio
+¿En qué consiste la exclusión social?,Proceso que impide participación plena en sociedad,Social,medio
+¿Cuál es la diferencia entre norma y valor?,Norma es regla de conducta valor es principio,Social,medio
+¿Qué es la opinión pública?,Conjunto de opiniones de la ciudadanía,Social,medio
+¿En qué consiste la teoría del capital humano?,Conocimientos y habilidades como inversión económica,Social,medio
+¿Cuál es la función de la familia en sociedad?,Socialización y reproducción social,Social,medio
+¿Qué son las redes sociales (sociológicas)?,Estructura de relaciones entre actores sociales,Social,medio
+¿En qué consiste la desigualdad social?,Distribución no equitativa de recursos,Social,medio
+¿Cuál es la diferencia entre rol y estatus?,Estatus es posición rol es comportamiento esperado,Social,medio
+¿Qué es la ciudadanía?,Condición de pertenencia a una comunidad política,Social,medio
+¿En qué consiste la teoría de la elección racional?,Individuos actúan maximizando beneficios,Social,medio
+¿Cuál es la función de la educación en sociedad?,Transmitir conocimientos y reproducir cultura,Social,medio
+¿Qué son los conflictos sociales?,Tensiones entre grupos con intereses diferentes,Social,medio
+¿En qué consiste la identidad social?,Sentido de pertenencia a grupos sociales,Social,medio
+¿Cuál es la diferencia entre multiculturalismo e interculturalismo?,Multiculturalismo coexiste interculturalismo interactúa,Social,medio
+¿Qué es la gobernanza?,Proceso de tomar decisiones colectivas,Social,medio
+¿En qué consiste la teoría de sistemas sociales?,Sociedad como sistema de interacciones,Social,medio
+¿Cuál es la función de los rituales sociales?,Reforzar vínculos y valores comunitarios,Social,medio
+¿Qué son las instituciones informales?,Reglas no escritas que guían comportamiento,Social,medio
+¿En qué consiste la participación política?,Actividades para influir en decisiones gubernamentales,Social,medio
+¿Cuál es la diferencia entre tradición y modernidad?,Tradición preserva el pasado modernidad busca cambio,Social,medio
+¿En qué consiste la teoría del campo de Bourdieu?,Espacios sociales estructurados por relaciones de poder,Social,dificil
+¿Cuál es el concepto de habitus bourdieuano?,Disposiciones duraderas que generan prácticas,Social,dificil
+¿Qué son las comunidades imaginadas de Anderson?,Construcción social de identidad nacional,Social,dificil
+¿En qué consiste la teoría de la estructuración de Giddens?,Relación dialéctica entre agencia y estructura,Social,dificil
+¿Cuál es la función del panóptico foucaultiano?,Metáfora del poder disciplinario moderno,Social,dificil
+¿Qué es la alienación marxista?,Separación del trabajador de su trabajo y producto,Social,dificil
+¿En qué consiste la teoría de sistemas mundiales?,Análisis del capitalismo como sistema global,Social,dificil
+¿Cuál es el concepto de anomia durkheimiana?,Estado de desregulación normativa,Social,dificil
+¿Qué son los marcos interpretativos?,Esquemas cognitivos para dar sentido a la realidad,Social,dificil
+¿En qué consiste la teoría del intercambio social?,Relaciones como intercambio de recursos,Social,dificil
+¿Cuál es la función de la violencia simbólica?,Dominación que se ejerce sin fuerza física,Social,dificil
+¿Qué es la individualización según Beck?,Proceso de liberación de estructuras tradicionales,Social,dificil
+¿En qué consiste la sociedad del riesgo?,Sociedad caracterizada por riesgos manufacturados,Social,dificil
+¿Cuál es el concepto de capital cultural?,Conocimientos y habilidades como forma de capital,Social,dificil
+¿Qué son las instituciones totales de Goffman?,Organizaciones que controlan totalmente la vida,Social,dificil
+¿En qué consiste la teoría de la acción comunicativa?,Acción orientada al entendimiento mutuo,Social,dificil
+¿Cuál es la función de los rituales de interacción?,Crear solidaridad y energía emocional,Social,dificil
+¿Qué es la modernidad líquida de Bauman?,Sociedad caracterizada por fluidez e incertidumbre,Social,dificil
+¿En qué consiste la interseccionalidad?,Análisis de múltiples sistemas de opresión,Social,dificil
+¿Cuál es el concepto de campo político?,Espacio de lucha por el poder simbólico,Social,dificil
+¿Qué son las estructuras de oportunidad política?,Condiciones que facilitan o limitan acción colectiva,Social,dificil
+¿En qué consiste la teoría del reconocimiento?,Lucha por reconocimiento como motor social,Social,dificil
+¿Cuál es la función de la hegemonía gramsciana?,Dominación cultural en lugar de coerción,Social,dificil
+¿Qué es la sociedad red de Castells?,Sociedad organizada en torno a redes de información,Social,dificil
+¿En qué consiste la glocalización?,Interacción entre procesos globales y locales,Social,dificil
+¿Cuál es el concepto de espacio social?,Campo multidimensional de posiciones sociales,Social,dificil
+¿Qué son los movimientos de nuevo social?,Movimientos post-materialistas centrados en identidad,Social,dificil
+¿En qué consiste la desinstitucionalización?,Proceso de debilitamiento de instituciones tradicionales,Social,dificil
+¿Cuál es la función de la esfera pública?,Espacio de deliberación democrática,Social,dificil
+¿Qué es la gubernamentalidad foucaultiana?,Arte de gobernar conductas y poblaciones,Social,muy-dificil
+¿En qué consiste la biopolítica agambeniana?,Poder sobre la vida biológica en estado de excepción,Social,muy-dificil
+¿Cuál es el concepto de multitud de Negri?,Subjetividad colectiva en capitalismo postmoderno,Social,muy-dificil
+¿Qué son las máquinas deseantes deleuzianas?,Producción inconsciente del deseo como fuerza social,Social,muy-dificil
+¿En qué consiste la deconstrucción derridaiana?,Estrategia que revela contradicciones en textos,Social,muy-dificil
+¿Cuál es la función del simulacro baudrillardiano?,Copia sin original en sociedad mediática,Social,muy-dificil
+¿Qué es la différance de Derrida?,Juego de diferir y diferencia en constitución del sentido,Social,muy-dificil
+¿En qué consiste la sociedad del espectáculo?,Relaciones sociales mediadas por imágenes,Social,muy-dificil
+¿Cuál es el concepto de rizoma deleuziano?,Modelo de pensamiento no jerárquico y múltiple,Social,muy-dificil
+¿Qué son las heterotopías foucaultianas?,Espacios otros que reflejan y cuestionan espacios reales,Social,muy-dificil
+¿En qué consiste la performatividad butleriana?,Identidad como repetición estilizada de actos,Social,muy-dificil
+¿Cuál es la función de la comunidad que viene?,Comunidad basada en singularidades sin identidad,Social,muy-dificil
+¿Qué es la ontología plana de Latour?,Actores humanos y no humanos en redes simétricas,Social,muy-dificil
+¿En qué consiste el aceleracionismo?,Intensificación de procesos capitalistas hacia su superación,Social,muy-dificil
+¿Cuál es el concepto de capitalismo cognitivo?,Economía basada en conocimiento y subjetividad,Social,muy-dificil
+¿Qué son los regímenes de historicidad?,Formas de articular pasado presente y futuro,Social,muy-dificil
+¿En qué consiste la crítica postcolonial?,Cuestionamiento de narrativas coloniales occidentales,Social,muy-dificil
+¿Cuál es la función del neomaterialismo?,Agencia de la materia en configuraciones sociales,Social,muy-dificil
+¿Qué es la ontología orientada a objetos?,Filosofía que equipara humanos y no humanos,Social,muy-dificil
+¿En qué consiste la geografía posthumana?,Análisis espacial más allá de lo antropocéntrico,Social,muy-dificil
+¿Cuál es el concepto de Antropoceno?,Era geológica dominada por actividad humana,Social,muy-dificil
+¿Qué son las epistemologías del Sur?,Conocimientos subalternos no occidentales,Social,muy-dificil
+¿En qué consiste la teoría queer?,Cuestionamiento de categorías sexuales normativas,Social,muy-dificil
+¿Cuál es la función del nuevo materialismo?,Revalorización de la agencia material,Social,muy-dificil
+¿Qué es la cosmopolítica?,Política que incluye entidades no humanas,Social,muy-dificil
+¿En qué consiste la ontología relacional?,Realidad constituida por relaciones no entidades,Social,muy-dificil
+¿En qué siglo se construyeron las pirámides?,Siglo XXVI a.C.,Historia,muy-facil
+¿Quién fue el primer emperador de Roma?,Augusto,Historia,muy-facil
+¿En qué año descubrió Colón América?,1492,Historia,muy-facil
+¿Cuál fue la capital del Imperio Inca?,Cusco,Historia,muy-facil
+¿En qué siglo vivió Shakespeare?,Siglo XVI-XVII,Historia,muy-facil
+¿Quién fue Alejandro Magno?,Conquistador macedonio,Historia,muy-facil
+¿En qué año comenzó la Revolución Francesa?,1789,Historia,muy-facil
+¿Cuál fue el primer país en llegar a la Luna?,Estados Unidos,Historia,muy-facil
+¿En qué siglo se inventó la imprenta?,Siglo XV,Historia,muy-facil
+¿Quién fue Cristóbal Colón?,Explorador que llegó a América,Historia,muy-facil
+¿En qué año terminó la Primera Guerra Mundial?,1918,Historia,muy-facil
+¿Cuál fue la civilización de los faraones?,Egipto,Historia,muy-facil
+¿En qué siglo vivió Mozart?,Siglo XVIII,Historia,muy-facil
+¿Quién fue Gandhi?,Líder de la independencia de India,Historia,muy-facil
+¿En qué año cayó el Imperio Romano?,476 d.C.,Historia,muy-facil
+¿Cuál fue la guerra entre Norte y Sur de EE.UU.?,Guerra Civil Americana,Historia,muy-facil
+¿En qué siglo se descubrió América?,Siglo XV,Historia,muy-facil
+¿Quién fue Martin Luther King?,Líder de derechos civiles estadounidense,Historia,muy-facil
+¿En qué año se independizó Estados Unidos?,1776,Historia,muy-facil
+¿Cuál fue el emperador francés más famoso?,Napoleón Bonaparte,Historia,muy-facil
+¿En qué siglo fue la Edad Media?,Siglos V-XV,Historia,muy-facil
+¿Quién escribió la Declaración de Independencia americana?,Thomas Jefferson,Historia,muy-facil
+¿En qué año comenzó la Segunda Guerra Mundial?,1939,Historia,muy-facil
+¿Cuál fue la primera democracia de la historia?,Atenas,Historia,muy-facil
+¿En qué siglo fue el Renacimiento?,Siglos XV-XVI,Historia,muy-facil
+¿Quién fue el último zar de Rusia?,Nicolás II,Historia,muy-facil
+¿En qué año se fundó Roma?,753 a.C.,Historia,muy-facil
+¿Cuál fue la dinastía china más larga?,Zhou,Historia,muy-facil
+¿En qué siglo vivió Beethoven?,Siglos XVIII-XIX,Historia,muy-facil
+¿Quién fue el primer presidente de México?,Guadalupe Victoria,Historia,muy-facil
+¿Cuál fue la causa principal de la Guerra Fría?,Rivalidad entre EE.UU. y URSS,Historia,facil
+¿En qué año se firmó el Tratado de Versalles?,1919,Historia,facil
+¿Quién fue Simón Bolívar?,Libertador de América del Sur,Historia,facil
+¿Cuál fue el resultado de la Batalla de Waterloo?,Derrota definitiva de Napoleón,Historia,facil
+¿En qué consistió la Revolución Industrial?,Transformación hacia producción mecanizada,Historia,facil
+¿Quién fue Hernán Cortés?,Conquistador español de México,Historia,facil
+¿Cuál fue la capital del Imperio Bizantino?,Constantinopla,Historia,facil
+¿En qué año se abolió la esclavitud en Brasil?,1888,Historia,facil
+¿Quién fue Mahoma?,Fundador del Islam,Historia,facil
+¿Cuál fue el objetivo de las expediciones de Marco Polo?,Comercio con Asia,Historia,facil
+¿En qué consistió la Reforma Protestante?,Movimiento religioso contra la Iglesia Católica,Historia,facil
+¿Quién fue Francisco Pizarro?,Conquistador español del Perú,Historia,facil
+¿Cuál fue la primera universidad europea?,Universidad de Bolonia,Historia,facil
+¿En qué año se produjo la Revolución Rusa?,1917,Historia,facil
+¿Quién fue Confucio?,Filósofo chino,Historia,facil
+¿Cuál fue la causa de la caída de Constantinopla?,Conquista otomana,Historia,facil
+¿En qué consistió el feudalismo?,Sistema político-económico medieval,Historia,facil
+¿Quién fue Isabel la Católica?,Reina de Castilla que financió a Colón,Historia,facil
+¿Cuál fue el imperio más extenso de la historia?,Imperio Mongol,Historia,facil
+¿En qué año se unificó Italia?,1861,Historia,facil
+¿Quién fue Nelson Mandela?,Líder sudafricano contra el apartheid,Historia,facil
+¿Cuál fue la batalla decisiva de la independencia americana?,Batalla de Yorktown,Historia,facil
+¿En qué consistió la Ilustración?,Movimiento intelectual del siglo XVIII,Historia,facil
+¿Quién fue Vasco da Gama?,Explorador portugués que llegó a India,Historia,facil
+¿Cuál fue la dinastía que construyó la Gran Muralla?,Qin,Historia,facil
+¿En qué año se firmó la Carta Magna?,1215,Historia,facil
+¿Quién fue Juana de Arco?,Heroína francesa de la Guerra de los Cien Años,Historia,facil
+¿Cuál fue la primera capital de Estados Unidos?,Nueva York,Historia,facil
+¿En qué consistió el Plan Marshall?,Programa de reconstrucción europea,Historia,facil
+¿Quién fue el primer hombre en el espacio?,Yuri Gagarin,Historia,facil
+¿Cuál fue el impacto del Tratado de Tordesillas?,División del Nuevo Mundo entre España y Portugal,Historia,medio
+¿En qué consistió la Guerra de los Treinta Años?,Conflicto religioso-político europeo,Historia,medio
+¿Quién fue Akbar el Grande?,Emperador mogol de India,Historia,medio
+¿Cuál fue la importancia de la Batalla de Tours?,Detuvo la expansión musulmana en Europa,Historia,medio
+¿En qué consistió el Cisma de Occidente?,División de la cristiandad occidental,Historia,medio
+¿Quién fue Saladino?,Líder musulmán durante las Cruzadas,Historia,medio
+¿Cuál fue el resultado de la Paz de Westfalia?,Nuevo orden político europeo,Historia,medio
+¿En qué consistió la Revolución Gloriosa?,Cambio dinástico en Inglaterra,Historia,medio
+¿Quién fue Toussaint Louverture?,Líder de la revolución haitiana,Historia,medio
+¿Cuál fue la importancia de la Batalla de Hastings?,Conquista normanda de Inglaterra,Historia,medio
+¿En qué consistió el Gran Cisma de Oriente?,Separación entre Iglesias católica y ortodoxa,Historia,medio
+¿Quién fue Mansa Musa?,Emperador de Mali y hombre más rico de la historia,Historia,medio
+¿Cuál fue el impacto de la Peste Negra?,Transformación social y económica de Europa,Historia,medio
+¿En qué consistió la Guerra de Sucesión Española?,Conflicto por la herencia de Carlos II,Historia,medio
+¿Quién fue Sun Yat-sen?,Fundador de la República China,Historia,medio
+¿Cuál fue la importancia del Edicto de Nantes?,Tolerancia religiosa en Francia,Historia,medio
+¿En qué consistió la Revolución Meiji?,Modernización de Japón,Historia,medio
+¿Quién fue Shaka Zulu?,Rey y reformador militar zulú,Historia,medio
+¿Cuál fue el resultado de la Guerra del Opio?,Apertura forzada de China,Historia,medio
+¿En qué consistió el sistema de encomiendas?,Control de trabajo indígena en América,Historia,medio
+¿Quién fue Mehmet II?,Sultán otomano que conquistó Constantinopla,Historia,medio
+¿Cuál fue la importancia de la Conferencia de Berlín?,Reparto de África entre potencias europeas,Historia,medio
+¿En qué consistió la Doctrina Monroe?,Política estadounidense para América Latina,Historia,medio
+¿Quién fue Kemal Atatürk?,Fundador de la Turquía moderna,Historia,medio
+¿Cuál fue el impacto de la Revolución de 1848?,Ola revolucionaria liberal en Europa,Historia,medio
+¿En qué consistió el sistema tributario azteca?,Control imperial basado en tributos,Historia,medio
+¿Quién fue Pachacútec?,Emperador inca que expandió el imperio,Historia,medio
+¿Cuál fue la importancia del Congreso de Viena?,Reorganización europea tras Napoleón,Historia,medio
+¿En qué consistió la Guerra de los Siete Años?,Primer conflicto mundial entre potencias,Historia,medio
+¿Quién fue Solón?,Legislador ateniense que sentó bases democráticas,Historia,medio
+¿Cuál fue el impacto de la Crisis de 1929?,Gran Depresión mundial,Historia,dificil
+¿En qué consistió la Querella de las Investiduras?,Conflicto entre papado e imperio por nombramientos,Historia,dificil
+¿Quién fue Al-Andalus?,Territorio musulmán en la Península Ibérica,Historia,dificil
+¿Cuál fue la importancia de la Reforma Gregoriana?,Centralización y moralización de la Iglesia,Historia,dificil
+¿En qué consistió el sistema de capitulaciones otomanas?,Privilegios comerciales a extranjeros,Historia,dificil
+¿Quién fue Ibn Jaldún?,Historiador y sociólogo árabe,Historia,dificil
+¿Cuál fue el papel de la Hansa?,Liga comercial del norte de Europa,Historia,dificil
+¿En qué consistió la Revolución de los Precios?,Inflación por metales americanos,Historia,dificil
+¿Quién fue Maquiavelo?,Teórico político del Renacimiento,Historia,dificil
+¿Cuál fue la importancia del Tratado de Utrecht?,Nuevo equilibrio europeo,Historia,dificil
+¿En qué consistió el despotismo ilustrado?,Monarquía absoluta con reformas racionalistas,Historia,dificil
+¿Quién fue Voltaire?,Filósofo de la Ilustración,Historia,dificil
+¿Cuál fue el impacto de las reformas borbónicas?,Modernización administrativa americana,Historia,dificil
+¿En qué consistió la Crisis del siglo XVII?,Período de guerras y crisis económica,Historia,dificil
+¿Quién fue Francisco Suárez?,Teólogo y jurista español,Historia,dificil
+¿Cuál fue la importancia de la Escuela de Salamanca?,Desarrollo del derecho internacional,Historia,dificil
+¿En qué consistió el regalismo borbónico?,Control real sobre la Iglesia,Historia,dificil
+¿Quién fue Bartolomé de las Casas?,Defensor de los derechos indígenas,Historia,dificil
+¿Cuál fue el papel de los jesuitas en América?,Evangelización y educación colonial,Historia,dificil
+¿En qué consistió el mercantilismo español?,Política económica de acumulación de metales,Historia,dificil
+¿Quién fue Hugo Grocio?,Fundador del derecho internacional,Historia,dificil
+¿Cuál fue la importancia de la Paz de Augsburgo?,Reconocimiento del luteranismo,Historia,dificil
+¿En qué consistió el jansenismo?,Movimiento católico rigorista,Historia,dificil
+¿Quién fue Jean Bodin?,Teórico de la soberanía,Historia,dificil
+¿Cuál fue el impacto de la Pequeña Edad de Hielo?,Cambios climáticos y sociales europeos,Historia,dificil
+¿En qué consistió el sistema de flotas?,Comercio regulado entre España y América,Historia,dificil
+¿Quién fue Domingo de Soto?,Teólogo de la Escuela de Salamanca,Historia,dificil
+¿Cuál fue la importancia de la Devotio Moderna?,Renovación espiritual bajomedieval,Historia,dificil
+¿En qué consistió el conciliarismo?,Movimiento por la supremacía conciliar,Historia,dificil
+¿Quién fue Guillermo de Ockham?,Filósofo nominalista medieval,Historia,dificil
+¿Cuál es la importancia de la longue durée braudeliana?,Estructura temporal de larga duración en análisis histórico,Historia,muy-dificil
+¿En qué consiste la microhistoria como método?,Reducción de escala para análisis detallado,Historia,muy-dificil
+¿Qué implica el linguistic turn en historiografía?,Giro hacia análisis del lenguaje y representación,Historia,muy-dificil
+¿Cuál es el concepto de Sattelzeit de Koselleck?,Período de transición conceptual fundamental,Historia,muy-dificil
+¿En qué consiste la historia de las mentalidades?,Estudio de estructuras mentales colectivas,Historia,muy-dificil
+¿Qué significa la Nueva Historia Cultural?,Integración antropológica en historia,Historia,muy-dificil
+¿Cuál es la crítica postcolonial a la historiografía?,Cuestionamiento de narrativas eurocéntricas,Historia,muy-dificil
+¿En qué consiste el concepto de experiencia thompsoniano?,Mediación entre ser social y conciencia,Historia,muy-dificil
+¿Qué implica la historia desde abajo?,Perspectiva de clases subalternas,Historia,muy-dificil
+¿Cuál es la importancia de la prosopografía?,Biografía colectiva de élites,Historia,muy-dificil
+¿En qué consiste la historia de género?,Análisis de construcción histórica de identidades,Historia,muy-dificil
+¿Qué significa la invención de tradición?,Construcción moderna de prácticas ancestrales,Historia,muy-dificil
+¿Cuál es la crítica de White a la narrativa?,Tropología del discurso histórico,Historia,muy-dificil
+¿En qué consiste la historia conectada?,Análisis de intercambios transnacionales,Historia,muy-dificil
+¿Qué implica el spatial turn en historia?,Giro hacia análisis espacial,Historia,muy-dificil
+¿Cuál es el concepto de simultaneidad andersoniano?,Construcción de comunidades imaginadas,Historia,muy-dificil
+¿En qué consiste la historia conceptual alemana?,Análisis de transformación de conceptos políticos,Historia,muy-dificil
+¿Qué significa la historia del tiempo presente?,Historiografía de época contemporánea,Historia,muy-dificil
+¿Cuál es la importancia de los regímenes de historicidad?,Formas de articular temporalidades,Historia,muy-dificil
+¿En qué consiste la archeología del saber foucaultiana?,Análisis de formaciones discursivas,Historia,muy-dificil
+¿Qué implica la deconstrucción en historia?,Análisis de contradicciones narrativas,Historia,muy-dificil
+¿Cuál es el concepto de cronotopo bajtiniano?,Configuraciones espacio-temporales narrativas,Historia,muy-dificil
+¿En qué consiste la historia subalterna?,Perspectiva de grupos marginados,Historia,muy-dificil
+¿Qué significa la crisis de la representación?,Cuestionamiento de la capacidad mimética,Historia,muy-dificil
+¿Cuál es la importancia del giro afectivo?,Emociones como categoría histórica,Historia,muy-dificil
+¿En qué consiste la historia posthumana?,Historia más allá del antropocentrismo,Historia,muy-dificil
+¿Qué implica la historia del Antropoceno?,Historiografía de la era geológica humana,Historia,muy-dificil
+¿Cuál es el concepto de agencia material?,Capacidad de acción de objetos,Historia,muy-dificil
+¿En qué consiste la história global?,Perspectiva mundial e interconectada,Historia,muy-dificil
+¿Qué significa la historia multiespecie?,Inclusión de no humanos en narrativa,Historia,muy-dificil
+¿Cuál es la capital de Canadá?,Ottawa,Geografía,muy-facil
+¿En qué continente está Argentina?,América del Sur,Geografía,muy-facil
+¿Cuál es el océano más pequeño?,Ártico,Geografía,muy-facil
+¿En qué país está el río Nilo?,Egipto,Geografía,muy-facil
+¿Cuál es la capital de Francia?,París,Geografía,muy-facil
+¿En qué continente está Rusia?,Europa y Asia,Geografía,muy-facil
+¿Cuál es el desierto de América del Norte?,Mojave,Geografía,muy-facil
+¿En qué país están las Cataratas del Niágara?,Estados Unidos y Canadá,Geografía,muy-facil
+¿Cuál es la capital de Italia?,Roma,Geografía,muy-facil
+¿En qué continente está Madagascar?,África,Geografía,muy-facil
+¿Cuál es el volcán más famoso de Italia?,Vesubio,Geografía,muy-facil
+¿En qué país está Tokio?,Japón,Geografía,muy-facil
+¿Cuál es la isla más grande del mundo?,Groenlandia,Geografía,muy-facil
+¿En qué continente está la India?,Asia,Geografía,muy-facil
+¿Cuál es el canal que une dos océanos?,Panamá,Geografía,muy-facil
+¿En qué país está Berlín?,Alemania,Geografía,muy-facil
+¿Cuál es la península del sur de Europa?,Ibérica,Geografía,muy-facil
+¿En qué océano están las islas Filipinas?,Pacífico,Geografía,muy-facil
+¿Cuál es la capital de España?,Madrid,Geografía,muy-facil
+¿En qué continente está Chile?,América del Sur,Geografía,muy-facil
+¿Cuál es el estrecho entre España y Marruecos?,Gibraltar,Geografía,muy-facil
+¿En qué país está Moscú?,Rusia,Geografía,muy-facil
+¿Cuál es la cordillera más larga del mundo?,Andes,Geografía,muy-facil
+¿En qué continente está Noruega?,Europa,Geografía,muy-facil
+¿Cuál es el río de Londres?,Támesis,Geografía,muy-facil
+¿En qué país está Sydney?,Australia,Geografía,muy-facil
+¿Cuál es la capital de México?,Ciudad de México,Geografía,muy-facil
+¿En qué océano está Cuba?,Atlántico,Geografía,muy-facil
+¿Cuál es el lago entre EE.UU. y Canadá?,Grandes Lagos,Geografía,muy-facil
+¿En qué país está Estocolmo?,Suecia,Geografía,muy-facil
+¿Cuál es la diferencia entre clima tropical y templado?,Tropical es cálido y húmedo templado tiene estaciones marcadas,Geografía,facil
+¿Qué son las coordenadas geográficas?,Sistema de latitud y longitud para ubicación,Geografía,facil
+¿En qué consiste la erosión costera?,Desgaste de costas por acción del mar,Geografía,facil
+¿Cuál es la función de los ríos?,Transportar agua y sedimentos,Geografía,facil
+¿Qué son los paralelos y meridianos?,Líneas imaginarias para coordenadas terrestres,Geografía,facil
+¿En qué consiste el ciclo hidrológico?,Circulación continua del agua,Geografía,facil
+¿Cuál es la diferencia entre valle y montaña?,Valle es depresión montaña es elevación,Geografía,facil
+¿Qué son los ecosistemas?,Comunidades de seres vivos y su ambiente,Geografía,facil
+¿En qué consiste la contaminación del aire?,Presencia de sustancias nocivas en atmósfera,Geografía,facil
+¿Cuál es la función de los bosques?,Producir oxígeno y regular clima,Geografía,facil
+¿Qué son las estaciones del año?,Períodos climáticos causados por inclinación terrestre,Geografía,facil
+¿En qué consiste la deforestación?,Eliminación de bosques por actividad humana,Geografía,facil
+¿Cuál es la diferencia entre lago y mar?,Lago es agua dulce cerrada mar es agua salada,Geografía,facil
+¿Qué son los polos terrestres?,Extremos norte y sur del eje terrestre,Geografía,facil
+¿En qué consiste el calentamiento global?,Aumento de temperatura mundial,Geografía,facil
+¿Cuál es la función de la atmósfera?,Proteger la Tierra y regular temperatura,Geografía,facil
+¿Qué son los continentes?,Grandes masas de tierra emergida,Geografía,facil
+¿En qué consiste la agricultura?,Cultivo de plantas para alimentación,Geografía,facil
+¿Cuál es la diferencia entre ciudad y pueblo?,Ciudad es más grande y poblada,Geografía,facil
+¿Qué son las zonas climáticas?,Regiones con características climáticas similares,Geografía,facil
+¿En qué consiste la ganadería?,Cría de animales para consumo,Geografía,facil
+¿Cuál es la función de los océanos?,Regular clima y albergar vida marina,Geografía,facil
+¿Qué son las fronteras?,Límites entre países o regiones,Geografía,facil
+¿En qué consiste el turismo?,Actividad de viajar por placer,Geografía,facil
+¿Cuál es la diferencia entre rural y urbano?,Rural es campo urbano es ciudad,Geografía,facil
+¿Qué son los recursos naturales?,Materiales que ofrece la naturaleza,Geografía,facil
+¿En qué consiste la minería?,Extracción de minerales del subsuelo,Geografía,facil
+¿Cuál es la función de los mapas?,Representar la superficie terrestre,Geografía,facil
+¿Qué son las migraciones?,Movimientos de población entre lugares,Geografía,facil
+¿En qué consiste la pesca?,Captura de peces y mariscos,Geografía,facil
+¿En qué consiste la zonación altitudinal de ecosistemas?,Variación de especies según altura,Geografía,medio
+¿Cuál es el efecto de las corrientes oceánicas en el clima?,Regulan temperatura de regiones costeras,Geografía,medio
+¿Qué son los sistemas de información geográfica?,Herramientas para análisis espacial digital,Geografía,medio
+¿En qué consiste la subsidencia del terreno?,Hundimiento gradual de superficie,Geografía,medio
+¿Cuál es la función de los humedales?,Filtrar agua y prevenir inundaciones,Geografía,medio
+¿Qué son las islas de calor urbano?,Zonas urbanas más cálidas que entorno,Geografía,medio
+¿En qué consiste el efecto Coriolis?,Desviación de movimientos por rotación terrestre,Geografía,medio
+¿Cuál es la importancia de la biodiversidad?,Estabilidad y funcionamiento de ecosistemas,Geografía,medio
+¿Qué son los acuíferos?,Formaciones que almacenan agua subterránea,Geografía,medio
+¿En qué consiste la fragmentación del hábitat?,División de ecosistemas continuos,Geografía,medio
+¿Cuál es el efecto de la deforestación en el clima?,Reduce precipitaciones y aumenta temperatura,Geografía,medio
+¿Qué son las cuencas hidrográficas?,Territorios drenados por sistema fluvial,Geografía,medio
+¿En qué consiste la eutrofización?,Enriquecimiento excesivo de nutrientes,Geografía,medio
+¿Cuál es la función de los corredores biológicos?,Conectar áreas naturales fragmentadas,Geografía,medio
+¿Qué son las teleconexiones climáticas?,Conexiones atmosféricas entre regiones distantes,Geografía,medio
+¿En qué consiste la salinización de suelos?,Acumulación de sales en tierra cultivable,Geografía,medio
+¿Cuál es el impacto del cambio climático en glaciares?,Retroceso y derretimiento acelerado,Geografía,medio
+¿Qué son los servicios ecosistémicos?,Beneficios que proporcionan los ecosistemas,Geografía,medio
+¿En qué consiste la desertificación?,Degradación de tierras en zonas secas,Geografía,medio
+¿Cuál es la función de la capa de ozono?,Filtrar radiación ultravioleta dañina,Geografía,medio
+¿Qué son los sistemas morfoclimáticos?,Procesos geomorfológicos según clima,Geografía,medio
+¿En qué consiste el fenómeno de El Niño?,Calentamiento del Pacífico ecuatorial,Geografía,medio
+¿Cuál es la importancia de los manglares?,Protección costera y biodiversidad,Geografía,medio
+¿Qué son las precipitaciones orográficas?,Lluvias causadas por elevación del terreno,Geografía,medio
+¿En qué consiste la circulación termohalina?,Corrientes profundas por temperatura y salinidad,Geografía,medio
+¿Cuál es el efecto de la urbanización en el medio ambiente?,Alteración de ecosistemas y microclima,Geografía,medio
+¿Qué son los biomas?,Grandes ecosistemas terrestres,Geografía,medio
+¿En qué consiste la inversión térmica?,Capa de aire cálido sobre aire frío,Geografía,medio
+¿Cuál es la función de los arrecifes de coral?,Protección costera y biodiversidad marina,Geografía,medio
+¿Qué son las dorsales oceánicas?,Cadenas montañosas submarinas,Geografía,medio
+¿En qué consiste la teoría de la deriva continental?,Movimiento de continentes a través del tiempo,Geografía,dificil
+¿Cuál es el concepto de paisaje cultural?,Resultado de interacción sociedad-naturaleza,Geografía,dificil
+¿Qué son los sistemas complejos en geografía?,Conjuntos de elementos interrelacionados,Geografía,dificil
+¿En qué consiste la biogeografía insular?,Distribución de especies en islas,Geografía,dificil
+¿Cuál es la importancia de los puntos calientes geológicos?,Zonas de volcanismo intraplaca,Geografía,dificil
+¿Qué son las oscilaciones climáticas?,Variaciones periódicas de patrones atmosféricos,Geografía,dificil
+¿En qué consiste la geomorfología climática?,Relación entre formas del relieve y clima,Geografía,dificil
+¿Cuál es el concepto de conectividad del paisaje?,Grado de conexión entre elementos espaciales,Geografía,dificil
+¿Qué son las retroalimentaciones en sistemas ambientales?,Procesos que amplifican o reducen cambios,Geografía,dificil
+¿En qué consiste la teoría del equilibrio dinámico?,Estabilidad mediante ajustes continuos,Geografía,dificil
+¿Cuál es la función de los gradientes ambientales?,Cambios graduales de condiciones espaciales,Geografía,dificil
+¿Qué son los umbrales en sistemas geográficos?,Puntos críticos de cambio de estado,Geografía,dificil
+¿En qué consiste la sucesión ecológica?,Cambios temporales en comunidades,Geografía,dificil
+¿Cuál es la importancia de la escala en análisis geográfico?,Nivel que determina patrones observables,Geografía,dificil
+¿Qué son las metacomunidades?,Comunidades locales conectadas por dispersión,Geografía,dificil
+¿En qué consiste el concepto de resiliencia ambiental?,Capacidad de recuperación tras perturbaciones,Geografía,dificil
+¿Cuál es la función de la heterogeneidad espacial?,Variación que mantiene diversidad,Geografía,dificil
+¿Qué son los regímenes de perturbación?,Patrones de disturbios en ecosistemas,Geografía,dificil
+¿En qué consiste la autoorganización en sistemas naturales?,Emergencia espontánea de patrones,Geografía,dificil
+¿Cuál es el concepto de capacidad de carga?,Límite poblacional sostenible,Geografía,dificil
+¿Qué son las transiciones de fase en geografía?,Cambios abruptos entre estados del sistema,Geografía,dificil
+¿En qué consiste la teoría de la biogeografía de islas?,Modelo de colonización y extinción,Geografía,dificil
+¿Cuál es la importancia de los efectos de borde?,Influencia de límites en ecosistemas,Geografía,dificil
+¿Qué son las redes ecológicas?,Sistemas de áreas protegidas conectadas,Geografía,dificil
+¿En qué consiste el concepto de nicho ecológico?,Papel funcional de especie en ecosistema,Geografía,dificil
+¿Cuál es la función de la redundancia funcional?,Múltiples especies con roles similares,Geografía,dificil
+¿Qué son los estados alternativos estables?,Múltiples configuraciones posibles de ecosistemas,Geografía,dificil
+¿En qué consiste la coevolución biogeográfica?,Evolución conjunta de especies y paisajes,Geografía,dificil
+¿Cuál es el concepto de memoria del paisaje?,Influencia de historia en configuración actual,Geografía,dificil
+¿En qué consiste la geografía crítica postmoderna?,Análisis de poder y representación espacial,Geografía,muy-dificil
+¿Cuál es el concepto de territorialidad según Sack?,Estrategia de control espacial por grupos,Geografía,muy-dificil
+¿Qué implica la teoría del actor-red en geografía?,Redes híbridas de actores humanos y no humanos,Geografía,muy-dificil
+¿En qué consiste la ontología plana geográfica?,Eliminación de jerarquías escalares,Geografía,muy-dificil
+¿Cuál es la importancia de la topología relacional?,Relaciones espaciales más allá de geometría,Geografía,muy-dificil
+¿Qué son las geografías feministas postcoloniales?,Intersección de género raza y colonialidad,Geografía,muy-dificil
+¿En qué consiste la geografía emocional?,Análisis de afectos en experiencia espacial,Geografía,muy-dificil
+¿Cuál es el concepto de performatividad espacial?,Espacios constituidos por prácticas repetitivas,Geografía,muy-dificil
+¿Qué implica la geografía más-que-humana?,Inclusión de agencias no humanas,Geografía,muy-dificil
+¿En qué consiste la geopolítica crítica feminista?,Análisis de género en poder espacial,Geografía,muy-dificil
+¿Cuál es la teoría de assemblages geográficos?,Configuraciones heterogéneas de elementos,Geografía,muy-dificil
+¿Qué son las geografías postseculares?,Análisis espacial más allá de dicotomías religiosas,Geografía,muy-dificil
+¿En qué consiste la geografía de las atmósferas?,Estudio de ambientes afectivos espaciales,Geografía,muy-dificil
+¿Cuál es el concepto de gubernamentalidad espacial?,Tecnologías de poder territoriales,Geografía,muy-dificil
+¿Qué implica la geografía de la supervivencia?,Espacialidades en condiciones precarias,Geografía,muy-dificil
+¿En qué consiste la geografía especulativa?,Futuros alternativos y potencialidades espaciales,Geografía,muy-dificil
+¿Cuál es la importancia de los nuevos materialismos?,Agencia de la materia en configuraciones espaciales,Geografía,muy-dificil
+¿Qué son las geografías queer planetarias?,Sexualidades no normativas a escala global,Geografía,muy-dificil
+¿En qué consiste la geofilosofía deleuziana?,Pensamiento territorial y desterritorialización,Geografía,muy-dificil
+¿Cuál es el concepto de cronotopo geográfico?,Configuraciones espacio-temporales específicas,Geografía,muy-dificil
+¿Qué implica la geografía posthumana?,Análisis espacial más allá del antropocentrismo,Geografía,muy-dificil
+¿En qué consiste la geografía del Antropoceno?,Espacialidad en era geológica humana,Geografía,muy-dificil
+¿Cuál es la teoría de la relacionalidad espacial?,Espacios constituidos por relaciones,Geografía,muy-dificil
+¿Qué son las geografías decoloniales?,Espacialidades que cuestionan colonialidad,Geografía,muy-dificil
+¿En qué consiste la geografía de los afectos?,Dimensiones emocionales del espacio,Geografía,muy-dificil
+¿Cuál es el concepto de multiplicidad espacial?,Coexistencia de múltiples espacialidades,Geografía,muy-dificil
+¿Qué implica la geografía experimental?,Métodos creativos de investigación espacial,Geografía,muy-dificil
+¿En qué consiste la geografía de las infraestructuras?,Análisis de redes técnicas y poder,Geografía,muy-dificil
+¿Cuál es la teoría de los espacios lisos y estriados?,Configuraciones espaciales según Deleuze,Geografía,muy-dificil
+¿Qué son las geografías algorítmicas?,Espacialidad mediada por algoritmos,Geografía,muy-dificil
+¿En qué consiste la geografía de la precariedad?,Espacialidades de vulnerabilidad económica,Geografía,muy-dificil
+¿Qué es una escultura?,Arte de crear formas tridimensionales,Arte,muy-facil
+¿Cuántos colores tiene el arcoíris?,Siete,Arte,muy-facil
+¿Qué instrumento toca un pianista?,Piano,Arte,muy-facil
+¿Quién pintó El Guernica?,Pablo Picasso,Arte,muy-facil
+¿Qué es un pincel?,Herramienta para pintar,Arte,muy-facil
+¿En qué museo está La Gioconda?,Museo del Louvre,Arte,muy-facil
+¿Qué color sale al mezclar blanco y negro?,Gris,Arte,muy-facil
+¿Quién compuso para Elisa?,Beethoven,Arte,muy-facil
+¿Qué es un retrato?,Pintura de una persona,Arte,muy-facil
+¿Cuántas cuerdas tiene un violín?,Cuatro,Arte,muy-facil
+¿Qué es la cerámica?,Arte de trabajar con arcilla,Arte,muy-facil
+¿En qué ciudad está la Sagrada Familia?,Barcelona,Arte,muy-facil
+¿Qué es un mural?,Pintura en una pared,Arte,muy-facil
+¿Quién compuso La flauta mágica?,Mozart,Arte,muy-facil
+¿Qué forma tiene un círculo?,Redonda,Arte,muy-facil
+¿En qué país nació Van Gogh?,Países Bajos,Arte,muy-facil
+¿Qué es un lienzo?,Tela para pintar,Arte,muy-facil
+¿Quién escribió El cascanueces?,Tchaikovsky,Arte,muy-facil
+¿Qué es la fotografía?,Arte de capturar imágenes,Arte,muy-facil
+¿Cuántas teclas negras tiene un piano?,36,Arte,muy-facil
+¿Qué es un collage?,Técnica de pegar materiales diversos,Arte,muy-facil
+¿En qué siglo vivió Goya?,XVIII-XIX,Arte,muy-facil
+¿Qué es la acuarela?,Pintura con pigmentos y agua,Arte,muy-facil
+¿Quién compuso El Danubio Azul?,Johann Strauss,Arte,muy-facil
+¿Qué es un boceto?,Dibujo rápido y básico,Arte,muy-facil
+¿En qué museo está El David?,Galería de la Academia en Florencia,Arte,muy-facil
+¿Qué es el grafiti?,Arte urbano en paredes,Arte,muy-facil
+¿Quién compuso Carmen?,Bizet,Arte,muy-facil
+¿Qué es un mosaico?,Arte con pequeñas piezas de colores,Arte,muy-facil
+¿Cuántas notas hay en una escala?,Ocho,Arte,muy-facil
+¿Qué caracterizó al arte neoclásico?,Vuelta a los ideales clásicos griegos y romanos,Arte,facil
+¿En qué consiste la técnica del puntillismo?,Pintar con pequeños puntos de color,Arte,facil
+¿Quién fue Andy Warhol?,Artista del Pop Art,Arte,facil
+¿Cuál es la diferencia entre ballet y danza moderna?,Ballet es clásico y estructurado danza moderna es libre,Arte,facil
+¿Qué es la litografía?,Técnica de impresión sobre piedra,Arte,facil
+¿En qué período se desarrolló el arte romántico?,Siglo XIX,Arte,facil
+¿Quién pintó La persistencia de la memoria?,Salvador Dalí,Arte,facil
+¿Qué caracteriza al arte bizantino?,Iconos religiosos y mosaicos dorados,Arte,facil
+¿En qué consiste la técnica del grabado?,Imprimir desde una matriz tallada,Arte,facil
+¿Quién fue Frida Kahlo?,Pintora mexicana surrealista,Arte,facil
+¿Qué es el arte sacro?,Arte religioso para iglesias,Arte,facil
+¿En qué siglo surgió el impresionismo?,Siglo XIX,Arte,facil
+¿Quién compuso La Marsellesa?,Claude Joseph Rouget de Lisle,Arte,facil
+¿Qué caracteriza al arte egipcio?,Rigidez jerárquica y simbolismo funerario,Arte,facil
+¿En qué consiste la escultura en bronce?,Moldear metal fundido en formas,Arte,facil
+¿Quién pintó Las señoritas de Avignon?,Pablo Picasso,Arte,facil
+¿Qué es el arte rupestre?,Pinturas prehistóricas en cuevas,Arte,facil
+¿En qué período vivió Michelangelo?,Renacimiento,Arte,facil
+¿Quién compuso La consagración de la primavera?,Igor Stravinsky,Arte,facil
+¿Qué caracteriza al arte gótico?,Verticalidad y luminosidad,Arte,facil
+¿En qué consiste la técnica del temple?,Pintura con pigmentos y huevo,Arte,facil
+¿Quién fue Jackson Pollock?,Pintor del expresionismo abstracto,Arte,facil
+¿Qué es el arte conceptual básico?,Arte donde la idea es más importante que el objeto,Arte,facil
+¿En qué siglo se desarrolló el barroco?,Siglo XVII,Arte,facil
+¿Quién pintó La escuela de Atenas?,Rafael,Arte,facil
+¿Qué caracteriza al arte precolombino?,Arte de civilizaciones americanas antes de Colón,Arte,facil
+¿En qué consiste la xilografía?,Grabado en madera,Arte,facil
+¿Quién compuso Bolero?,Maurice Ravel,Arte,facil
+¿Qué es el land art básico?,Arte realizado en paisajes naturales,Arte,facil
+¿En qué período surgió el romanticismo?,Finales siglo XVIII principios XIX,Arte,facil
+¿En qué consiste la estética kantiana del juicio?,Análisis filosófico de la experiencia estética,Arte,medio
+¿Cuál fue la importancia del Salón de París?,Centro del establishment artístico francés,Arte,medio
+¿Qué caracteriza al expresionismo alemán?,Distorsión emocional y crítica social,Arte,medio
+¿En qué consiste la música dodecafónica?,Sistema atonal de doce tonos,Arte,medio
+¿Cuál es la función del mecenazgo renacentista?,Patrocinio artístico de la aristocracia,Arte,medio
+¿Qué es la sinestesia en arte?,Correspondencia entre sentidos diferentes,Arte,medio
+¿En qué consiste el arte total wagneriano?,Síntesis de música drama y artes visuales,Arte,medio
+¿Cuál fue la revolución de la perspectiva aérea?,Representación de profundidad mediante color,Arte,medio
+¿Qué caracteriza al muralismo mexicano?,Arte público con mensaje social,Arte,medio
+¿En qué consiste la música aleatoria?,Composición basada en el azar,Arte,medio
+¿Cuál es la importancia de la Bauhaus?,Integración de arte diseño e industria,Arte,medio
+¿Qué es la abstracción geométrica?,Arte no figurativo basado en formas puras,Arte,medio
+¿En qué consiste el método de Stanislavski?,Sistema de interpretación teatral,Arte,medio
+¿Cuál fue la función del arte en la Contrarreforma?,Instrumento de devoción y enseñanza católica,Arte,medio
+¿Qué caracteriza al neoplasticismo?,Reducción a líneas rectas y colores primarios,Arte,medio
+¿En qué consiste la música concreta?,Composición con sonidos grabados y manipulados,Arte,medio
+¿Cuál es la importancia de la Academia francesa?,Codificación de normas artísticas oficiales,Arte,medio
+¿Qué es la performance en artes escénicas?,Arte en vivo con el cuerpo como medio,Arte,medio
+¿En qué consiste el serialismo musical?,Organización sistemática de elementos musicales,Arte,medio
+¿Cuál fue la revolución del montaje eisensteiniano?,Creación de significado através del corte,Arte,medio
+¿Qué caracteriza al suprematismo?,Abstracción pura con formas geométricas básicas,Arte,medio
+¿En qué consiste la música espectral?,Composición basada en análisis del timbre,Arte,medio
+¿Cuál es la función de la crítica de arte moderna?,Mediación entre obra y público especializado,Arte,medio
+¿Qué es la instalación sonora?,Arte que transforma espacios con sonido,Arte,medio
+¿En qué consiste el método de composición por capas?,Superposición de elementos musicales independientes,Arte,medio
+¿Cuál fue la importancia de los manifiestos vanguardistas?,Programas teóricos de renovación artística,Arte,medio
+¿Qué caracteriza al minimalismo musical?,Repetición y transformación gradual,Arte,medio
+¿En qué consiste la estética de lo grotesco?,Mezcla de elementos contradictorios,Arte,medio
+¿Cuál es la función del cubo blanco?,Espacio neutral para exhibición artística,Arte,medio
+¿Qué es la música electroacústica?,Composición con medios electrónicos y acústicos,Arte,medio
+¿En qué consiste la estética de la recepción en arte?,Teoría que enfatiza el papel del espectador,Arte,dificil
+¿Cuál fue la importancia de la querella del color?,Debate entre dibujo y color en academia francesa,Arte,dificil
+¿Qué caracteriza al arte povera italiano?,Uso de materiales pobres y procesos naturales,Arte,dificil
+¿En qué consiste la música microtonall?,Sistema con intervalos menores al semitono,Arte,dificil
+¿Cuál es el concepto de aura benjaminiana?,Cualidad única irrepetible de la obra original,Arte,dificil
+¿Qué es la deconstrucción arquitectónica?,Arquitectura que cuestiona principios tradicionales,Arte,dificil
+¿En qué consiste la estética adorniana?,Crítica de la industria cultural,Arte,dificil
+¿Cuál fue la revolución del action painting?,Gestualidad y proceso como contenido artístico,Arte,dificil
+¿Qué caracteriza al teatro del absurdo?,Drama que refleja sinsentido de existencia,Arte,dificil
+¿En qué consiste la música ambient?,Sonido atmosférico para transformar espacios,Arte,dificil
+¿Cuál es la importancia de la obra de arte total?,Síntesis de todas las artes en experiencia única,Arte,dificil
+¿Qué es la apropiación artística?,Reutilización crítica de imágenes existentes,Arte,dificil
+¿En qué consiste el teatro épico brechtiano?,Drama que rompe ilusión para generar reflexión,Arte,dificil
+¿Cuál fue la función del arte en sociedades totales?,Instrumento de propaganda y control ideológico,Arte,dificil
+¿Qué caracteriza al arte relacional?,Práticas artísticas que generan encuentros sociales,Arte,dificil
+¿En qué consiste la música ritual contemporánea?,Composición para experiencias ceremoniales,Arte,dificil
+¿Cuál es el concepto de simulacro en arte?,Copia sin original en cultura postmoderna,Arte,dificil
+¿Qué es la estética posthumana?,Arte que cuestiona límites de lo humano,Arte,dificil
+¿En qué consiste el arte biotech?,Práctica artística con biotecnología,Arte,dificil
+¿Cuál fue la importancia de la desmaterialización?,Proceso de reducción del objeto artístico,Arte,dificil
+¿Qué caracteriza al new media art?,Arte que utiliza tecnologías digitales,Arte,dificil
+¿En qué consiste la música algorítmica?,Composición generada por programas,Arte,dificil
+¿Cuál es la función del arte en el capitalismo cognitivo?,Producción de subjetividad e inmaterialidad,Arte,dificil
+¿Qué es la estética de la emergencia?,Propiedades que surgen de interacciones complejas,Arte,dificil
+¿En qué consiste el arte de realidad virtual?,Creación de experiencias inmersivas digitales,Arte,dificil
+¿Cuál fue la revolución del video arte?,Democratización y temporalidad en arte visual,Arte,dificil
+¿Qué caracteriza al arte ecológico?,Práticas artísticas de conciencia ambiental,Arte,dificil
+¿En qué consiste la música generativa?,Sistemas que crean música de forma autónoma,Arte,dificil
+¿Cuál es el concepto de rizoma estético?,Multiplicidad de conexiones sin jerarquía,Arte,dificil
+¿Qué es la estética de los nuevos materiales?,Agencia estética de entidades no humanas,Arte,dificil
+¿En qué consiste la estética decolonial?,Arte que cuestiona epistemes coloniales,Arte,muy-dificil
+¿Cuál es la importancia del giro ontológico en arte?,Cuestionamiento de divisiones naturaleza-cultura,Arte,muy-dificil
+¿Qué caracteriza al arte en el Antropoceno?,Respuesta artística a crisis ambiental global,Arte,muy-dificil
+¿En qué consiste la música posthumana?,Composición que incluye agencias no humanas,Arte,muy-dificil
+¿Cuál es el concepto de différance estética?,Diferimiento constitutivo del sentido artístico,Arte,muy-dificil
+¿Qué es la performatividad material en arte?,Capacidad de acción de objetos artísticos,Arte,muy-dificil
+¿En qué consiste la estética especulativa?,Arte que imagina futuros alternativos,Arte,muy-dificil
+¿Cuál fue la importancia del arte después del fin del arte?,Pluralidad sin narrativa evolutiva,Arte,muy-dificil
+¿Qué caracteriza al arte de inteligencia artificial?,Creación artística por sistemas algorítmicos,Arte,muy-dificil
+¿En qué consiste la música de paisajes sonoros?,Composición con ecologías acústicas,Arte,muy-dificil
+¿Cuál es el concepto de agencia distribuida?,Acción repartida entre humanos y no humanos,Arte,muy-dificil
+¿Qué es la estética de la supervivencia?,Arte en condiciones de precariedad extrema,Arte,muy-dificil
+¿En qué consiste el arte de realidad mixta?,Hibridación de espacios físicos y digitales,Arte,muy-dificil
+¿Cuál fue la revolución del bioarte?,Manipulación artística de organismos vivos,Arte,muy-dificil
+¿Qué caracteriza al arte planetario?,Escala geológica y cósmica en creación,Arte,muy-dificil
+¿En qué consiste la música de inteligencia artificial?,Composición autónoma por sistemas de ML,Arte,muy-dificil
+¿Cuál es el concepto de arte multiespecie?,Colaboración creativa interespecies,Arte,muy-dificil
+¿Qué es la estética de la relacionalidad?,Arte basado en conexiones y vínculos,Arte,muy-dificil
+¿En qué consiste el arte de datos?,Creación artística con big data,Arte,muy-dificil
+¿Cuál fue la importancia del giro afectivo?,Emociones como categoría estética fundamental,Arte,muy-dificil
+¿Qué caracteriza al arte de realidad cuántica?,Exploración artística de física cuántica,Arte,muy-dificil
+¿En qué consiste la música de sistemas complejos?,Composición basada en teoría de la complejidad,Arte,muy-dificil
+¿Cuál es el concepto de estética posthumana crítica?,Arte que cuestiona antropocentrismo radical,Arte,muy-dificil
+¿Qué es la performatividad interespecie?,Actuación colaborativa entre especies,Arte,muy-dificil
+¿En qué consiste el arte de nanotecnología?,Creación a escala molecular,Arte,muy-dificil
+¿Cuál fue la revolución del arte sintético?,Generación artificial de experiencias estéticas,Arte,muy-dificil
+¿Qué caracteriza al arte de sistemas dinámicos?,Obras que evolucionan autoorganizadamente,Arte,muy-dificil
+¿En qué consiste la música de redes neuronales?,Composición por deep learning,Arte,muy-dificil
+¿Cuál es el concepto de estética del ensamblaje?,Arte como configuración heterogénea,Arte,muy-dificil
+¿Qué es la creatividad artificial?,Capacidad generativa autónoma de máquinas,Arte,muy-dificil
+¿En qué consiste el arte de mundos virtuales?,Creación de realidades paralelas digitales,Arte,muy-dificil
+¿Cuántos jugadores tiene un equipo de voleibol?,Seis,Deportes,muy-facil
+¿Qué deporte se practica en una piscina?,Natación,Deportes,muy-facil
+¿En qué deporte se usa un arco y flechas?,Tiro con arco,Deportes,muy-facil
+¿Cuántos puntos vale una canasta en baloncesto?,Dos o tres puntos,Deportes,muy-facil
+¿Qué deporte practica Tiger Woods?,Golf,Deportes,muy-facil
+¿En qué deporte hay un ring?,Boxeo,Deportes,muy-facil
+¿Cuántos sets se necesitan para ganar en voleibol?,Tres sets,Deportes,muy-facil
+¿Qué deporte se juega con los pies?,Fútbol,Deportes,muy-facil
+¿En qué deporte se hace un spike?,Voleibol,Deportes,muy-facil
+¿Cuántos jugadores hay en un equipo de rugby?,Quince,Deportes,muy-facil
+¿Qué deporte practica Serena Williams?,Tenis,Deportes,muy-facil
+¿En qué deporte se usa una red alta?,Voleibol,Deportes,muy-facil
+¿Cuántos minutos dura un round de boxeo?,Tres minutos,Deportes,muy-facil
+¿Qué deporte se practica en una cancha rectangular?,Baloncesto,Deportes,muy-facil
+¿En qué deporte se hace un salto mortal?,Gimnasia,Deportes,muy-facil
+¿Cuántos palos se usan en hockey?,Uno por jugador,Deportes,muy-facil
+¿Qué deporte practica Lewis Hamilton?,Fórmula 1,Deportes,muy-facil
+¿En qué deporte se nada en el mar?,Natación en aguas abiertas,Deportes,muy-facil
+¿Cuántos equipos participan en un partido?,Dos,Deportes,muy-facil
+¿Qué deporte se practica con una pelota ovalada?,Rugby,Deportes,muy-facil
+¿En qué deporte se usa un casco protector?,Hockey,Deportes,muy-facil
+¿Cuántas vueltas tiene una pista de atletismo?,Cuatro para completar 1600m,Deportes,muy-facil
+¿Qué deporte practica Usain Bolt?,Atletismo,Deportes,muy-facil
+¿En qué deporte se usan guantes especiales?,Boxeo,Deportes,muy-facil
+¿Cuántos tiempos tiene un partido de fútbol americano?,Cuatro cuartos,Deportes,muy-facil
+¿Qué deporte se practica en una mesa?,Ping pong,Deportes,muy-facil
+¿En qué deporte se hace un try?,Rugby,Deportes,muy-facil
+¿Cuántos lanzamientos libres se conceden por falta?,Uno o dos,Deportes,muy-facil
+¿Qué deporte practica Cristiano Ronaldo?,Fútbol,Deportes,muy-facil
+¿En qué deporte se usa una moto?,Motociclismo,Deportes,muy-facil
+¿Cuál es la distancia de un maratón completo?,42.195 kilómetros,Deportes,facil
+¿En qué consiste el sistema de sets en tenis?,Ganar seis juegos con ventaja de dos,Deportes,facil
+¿Qué es un triple-doble en baloncesto?,Dobles dígitos en tres estadísticas,Deportes,facil
+¿Cuántos innings tiene un partido de béisbol?,Nueve innings,Deportes,facil
+¿En qué consiste la técnica del crol?,Estilo de natación alterno de brazos,Deportes,facil
+¿Qué es una falta técnica en baloncesto?,Infracción de conducta o procedimiento,Deportes,facil
+¿Cuántos puntos vale un ensayo en rugby?,Cinco puntos,Deportes,facil
+¿En qué consiste el sistema de ranking en tenis?,Clasificación mundial de jugadores,Deportes,facil
+¿Qué es un corner kick en fútbol?,Saque de esquina por defensa,Deportes,facil
+¿Cuántas categorías de peso hay en boxeo?,Diecisiete categorías profesionales,Deportes,facil
+¿En qué consiste la regla del offside en fútbol?,Posición adelantada ilegal,Deportes,facil
+¿Qué es un home run en béisbol?,Bateo que permite recorrer todas las bases,Deportes,facil
+¿Cuántos jugadores hay en un equipo de hockey hielo?,Seis por equipo en cancha,Deportes,facil
+¿En qué consiste la técnica del smash en tenis?,Golpe potente por encima de la cabeza,Deportes,facil
+¿Qué es una tarjeta amarilla en fútbol?,Amonestación por infracción,Deportes,facil
+¿Cuántos puntos vale un field goal en fútbol americano?,Tres puntos,Deportes,facil
+¿En qué consiste el sistema de eliminación directa?,Perdedor queda eliminado del torneo,Deportes,facil
+¿Qué es un strike out en béisbol?,Eliminar bateador con tres strikes,Deportes,facil
+¿Cuántas faltas personales eliminan a un jugador de NBA?,Seis faltas personales,Deportes,facil
+¿En qué consiste la regla de los dos toques en voleibol?,Prohibición de tocar balón dos veces seguidas,Deportes,facil
+¿Qué es un penalty en fútbol?,Tiro penal por falta en área,Deportes,facil
+¿Cuántos round máximo hay en boxeo amateur?,Tres rounds,Deportes,facil
+¿En qué consiste la técnica del drop shot en tenis?,Golpe suave que cae cerca de la red,Deportes,facil
+¿Qué es un scrum en rugby?,Formación para disputar balón,Deportes,facil
+¿Cuántos saltos hay en triple salto?,Tres fases: hop step y jump,Deportes,facil
+¿En qué consiste el sistema suizo en torneos?,Todos juegan mismo número de rondas,Deportes,facil
+¿Qué es un eagle en golf?,Dos golpes bajo par,Deportes,facil
+¿Cuántos metros mide una cancha de baloncesto NBA?,28.7 x 15.2 metros,Deportes,facil
+¿En qué consiste la regla de ventaja en rugby?,Permitir juego fluido tras infracción menor,Deportes,facil
+¿Qué es un double fault en tenis?,Dos servicios fallidos consecutivos,Deportes,facil
+¿En qué consiste la táctica del pressing en fútbol?,Presión defensiva alta e intensa,Deportes,medio
+¿Cuál es la función del libero en voleibol moderno?,Especialista defensivo que no puede atacar,Deportes,medio
+¿Qué es el sistema de drafts en deportes profesionales?,Selección ordenada de jugadores amateur,Deportes,medio
+¿En qué consiste la regla del challenge en tenis profesional?,Revisión electrónica de decisiones arbitrales,Deportes,medio
+¿Cuál es la importancia del VO2 máximo en atletismo?,Medida de capacidad aeróbica máxima,Deportes,medio
+¿Qué es la zona de exclusión en waterpolo?,Sanción temporal por falta grave,Deportes,medio
+¿En qué consiste el sistema de handicap en golf?,Nivelación de habilidades entre jugadores,Deportes,medio
+¿Cuál es la función del designated hitter en béisbol?,Bateador especializado que no defiende,Deportes,medio
+¿Qué es el fair play financiero en fútbol?,Regulación de gastos de clubes profesionales,Deportes,medio
+¿En qué consiste la regla del shot clock en baloncesto?,Tiempo límite para intentar canasta,Deportes,medio
+¿Cuál es la importancia de la periodización en entrenamiento?,Planificación sistemática de cargas,Deportes,medio
+¿Qué es el sistema de wild card en torneos?,Invitación especial sin clasificación normal,Deportes,medio
+¿En qué consiste la estrategia del contra-ataque?,Transición rápida de defensa a ataque,Deportes,medio
+¿Cuál es la función del TMO en rugby?,Official de video para decisiones complejas,Deportes,medio
+¿Qué es la regla del advantage en tenis?,Punto de ventaja tras deuce,Deportes,medio
+¿En qué consiste el sistema de seeding en torneos?,Clasificación para evitar cruces tempranos,Deportes,medio
+¿Cuál es la importancia del lactato en entrenamiento?,Indicador de intensidad metabólica,Deportes,medio
+¿Qué es el sistema de playoffs en deportes americanos?,Eliminatorias para determinar campeón,Deportes,medio
+¿En qué consiste la táctica del full court press?,Presión defensiva en toda la cancha,Deportes,medio
+¿Cuál es la función del VAR en fútbol moderno?,Asistencia de video para decisiones arbitrales,Deportes,medio
+¿Qué es la regla de los cuatro downs en fútbol americano?,Cuatro intentos para avanzar diez yardas,Deportes,medio
+¿En qué consiste el sistema de tie-break en tenis?,Desempate a primero en llegar a siete,Deportes,medio
+¿Cuál es la importancia del análisis biomecánico?,Optimización técnica del movimiento deportivo,Deportes,medio
+¿Qué es el salary cap en ligas profesionales?,Límite salarial para equipidad competitiva,Deportes,medio
+¿En qué consiste la estrategia del pick and roll?,Táctica ofensiva con bloqueo y continuación,Deportes,medio
+¿Cuál es la función del hawkeye en tenis?,Sistema electrónico de seguimiento de pelota,Deportes,medio
+¿Qué es la regla del icing en hockey?,Infracción por envío desde zona defensiva,Deportes,medio
+¿En qué consiste el concepto de periodización táctica?,Integración de aspectos técnicos y físicos,Deportes,medio
+¿Cuál es la importancia del momentum en competición?,Factor psicológico de dominio del juego,Deportes,medio
+¿Qué es el sistema de round-robin en torneos?,Formato donde todos enfrentan a todos,Deportes,medio
+¿En qué consiste la periodización del entrenamiento deportivo?,Planificación sistemática de volumen e intensidad,Deportes,dificil
+¿Cuál es la importancia del umbral anaeróbico?,Punto metabólico crítico para rendimiento,Deportes,dificil
+¿Qué caracteriza al entrenamiento polarizado?,Distribución bimodal de intensidades,Deportes,dificil
+¿En qué consiste la teoría del aprendizaje motor?,Procesos de adquisición de habilidades motoras,Deportes,dificil
+¿Cuál es la función de la supercompensación?,Adaptación que supera nivel inicial,Deportes,dificil
+¿Qué es el concepto de transferencia específica?,Aplicación de habilidades entre contextos,Deportes,dificil
+¿En qué consiste la periodización no lineal?,Variación constante de estímulos de entrenamiento,Deportes,dificil
+¿Cuál es la importancia del análisis notacional?,Evaluación cuantitativa del rendimiento técnico-táctico,Deportes,dificil
+¿Qué caracteriza al entrenamiento concurrente?,Desarrollo simultáneo de capacidades diferentes,Deportes,dificil
+¿En qué consiste la teoría de la carga de entrenamiento?,Cuantificación del estrés fisiológico,Deportes,dificil
+¿Cuál es la función de la periodización del tapering?,Reducción de carga previa a competición,Deportes,dificil
+¿Qué es el concepto de especificidad funcional?,Similitud entre entrenamiento y competición,Deportes,dificil
+¿En qué consiste la fatiga neuromuscular?,Decremento de capacidad contráctil,Deportes,dificil
+¿Cuál es la importancia de la variabilidad de la frecuencia cardíaca?,Indicador de estado del sistema autónomo,Deportes,dificil
+¿Qué caracteriza al entrenamiento en hipoxia?,Adaptaciones a deficiencia de oxígeno,Deportes,dificil
+¿En qué consiste la teoría de la sobrecarga progresiva?,Incremento gradual del estímulo de entrenamiento,Deportes,dificil
+¿Cuál es la función de la crioterapia en recuperación?,Uso del frío para acelerar regeneración,Deportes,dificil
+¿Qué es el concepto de potenciación post-activación?,Mejora del rendimiento tras contracción intensa,Deportes,dificil
+¿En qué consiste la periodización del bloque?,Concentración de cargas específicas por períodos,Deportes,dificil
+¿Cuál es la importancia del análisis cinemático?,Estudio del movimiento sin considerar fuerzas,Deportes,dificil
+¿Qué caracteriza al entrenamiento isoinercial?,Resistencia variable con dispositivos especiales,Deportes,dificil
+¿En qué consiste la teoría del caos aplicada al deporte?,Sistemas complejos con resultados impredecibles,Deportes,dificil
+¿Cuál es la función de la electroestimulación?,Activación muscular mediante impulsos eléctricos,Deportes,dificil
+¿Qué es el concepto de carga interna vs externa?,Diferencia entre estímulo aplicado y respuesta fisiológica,Deportes,dificil
+¿En qué consiste la periodización conjugada?,Desarrollo simultáneo de múltiples capacidades,Deportes,dificil
+¿Cuál es la importancia del análisis cinético?,Estudio de fuerzas que producen movimiento,Deportes,dificil
+¿Qué caracteriza al entrenamiento vibratorio?,Uso de vibraciones mecánicas para estimulación,Deportes,dificil
+¿En qué consiste la teoría de la práctica deliberada?,Entrenamiento específico para mejora experta,Deportes,dificil
+¿Cuál es la función de la termografía en deporte?,Detección de patrones térmicos corporales,Deportes,dificil
+¿Qué es el concepto de reserva adaptativa?,Capacidad restante de adaptación al entrenamiento,Deportes,dificil
+¿En qué consiste la biomecanics analysis en deportes?,Análisis científico del movimiento humano,Deportes,muy-dificil
+¿Cuál es la importancia de la epigenética en rendimiento?,Influencia ambiental en expresión genética,Deportes,muy-dificil
+¿Qué caracteriza al entrenamiento de sistemas dinámicos?,Enfoque basado en autoorganización motora,Deportes,muy-dificil
+¿En qué consiste la teoría de la complejidad deportiva?,Análisis de sistemas adaptativos complejos,Deportes,muy-dificil
+¿Cuál es la función del neurofeedback en entrenamiento?,Retroalimentación cerebral para optimización,Deportes,muy-dificil
+¿Qué es el concepto de antifragilidad deportiva?,Fortalecimiento através de estrés adaptativo,Deportes,muy-dificil
+¿En qué consiste la cronobiología del rendimiento?,Influencia de ritmos circadianos en deporte,Deportes,muy-dificil
+¿Cuál es la importancia de la microbiota en atletas?,Influencia bacteriana en rendimiento y salud,Deportes,muy-dificil
+¿Qué caracteriza al entrenamiento constraint-led?,Aprendizaje motor guiado por restricciones,Deportes,muy-dificil
+¿En qué consiste la teoría de redes en deportes colectivos?,Análisis de interacciones como grafos,Deportes,muy-dificil
+¿Cuál es la función de la realidad virtual en entrenamiento?,Simulación inmersiva para práctica específica,Deportes,muy-dificil
+¿Qué es el concepto de periodización inversa?,Enfoque que prioriza especificidad temprana,Deportes,muy-dificil
+¿En qué consiste la inteligencia artificial en análisis deportivo?,Uso de ML para patrones complejos,Deportes,muy-dificil
+¿Cuál es la importancia de la psiconeuroendocrinología?,Interacción mente-sistema hormonal en deporte,Deportes,muy-dificil
+¿Qué caracteriza al entrenamiento de flujo sensorial?,Optimización de input sensorial para rendimiento,Deportes,muy-dificil
+¿En qué consiste la teoría de affordances motoras?,Oportunidades de acción en ambiente deportivo,Deportes,muy-dificil
+¿Cuál es la función de la optogenética experimental?,Manipulación neuronal con luz para estudio,Deportes,muy-dificil
+¿Qué es el concepto de meta-aprendizaje motor?,Aprender a aprender habilidades motoras,Deportes,muy-dificil
+¿En qué consiste la bioingeniería del rendimiento?,Aplicación de principios ingenieriles al deporte,Deportes,muy-dificil
+¿Cuál es la importancia de la farmacogenómica deportiva?,Respuesta individual a sustancias según genética,Deportes,muy-dificil
+¿Qué caracteriza al entrenamiento cuántico hipotético?,Aplicación de principios cuánticos a motor control,Deportes,muy-dificil
+¿En qué consiste la teoría de la información motora?,Procesamiento de información en control motor,Deportes,muy-dificil
+¿Cuál es la función de la nanotecnología en deporte?,Aplicaciones a nanoescala para rendimiento,Deportes,muy-dificil
+¿Qué es el concepto de emergencia en sistemas deportivos?,Propiedades que surgen de interacciones complejas,Deportes,muy-dificil
+¿En qué consiste la biomecánica computacional?,Modelado matemático de movimiento humano,Deportes,muy-dificil
+¿Cuál es la importancia de la proteómica en atletas?,Análisis de expresión proteica bajo entrenamiento,Deportes,muy-dificil
+¿Qué caracteriza al entrenamiento de redes neuronales?,Optimización de patrones de conectividad cerebral,Deportes,muy-dificil
+¿En qué consiste la teoría de catástrofes en deporte?,Cambios súbitos en rendimiento por pequeñas variaciones,Deportes,muy-dificil
+¿Cuál es la función de la biología sintética experimental?,Diseño de sistemas biológicos para rendimiento,Deportes,muy-dificil
+¿Qué es el concepto de swarm intelligence en deportes?,Inteligencia colectiva en deportes de equipo,Deportes,muy-dificil
+¿En qué consiste la mecánica cuántica del movimiento?,Aplicación hipotética de QM a sistemas biológicos,Deportes,muy-dificil
+¿Cuál es la importancia de la criobiología deportiva?,Estudio de efectos de bajas temperaturas,Deportes,muy-dificil
+¿Qué caracteriza al entrenamiento de morfogénesis?,Modificación dirigida de estructuras corporales,Deportes,muy-dificil
+¿En qué consiste la teoría de juegos evolutivos?,Estrategias que evolucionan en competición,Deportes,muy-dificil
+¿Cuál es la función de la computación cuántica en análisis?,Procesamiento exponencial de datos deportivos,Deportes,muy-dificil
+¿Qué es el concepto de metacognición deportiva?,Pensamiento sobre el pensamiento en deporte,Deportes,muy-dificil
+¿En qué consiste la bioarquitectura del rendimiento?,Diseño de estructuras biológicas optimizadas,Deportes,muy-dificil
