@@ -695,6 +695,57 @@
         .role-impostor {
             color: #c62828; /* red */
         }
+
+        /* Help button styles */
+        #infoBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #infoModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            overflow: auto;
+        }
+
+        #infoContent {
+            background: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            color: #2d3748;
+        }
+
+        #closeInfoBtn {
+            float: right;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        #infoText {
+            white-space: pre-wrap;
+            max-height: 70vh;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -830,6 +881,147 @@
 
         <div class="error-message" id="errorMessage"></div>
         <div class="success-message" id="successMessage"></div>
+    </div>
+
+    <button id="infoBtn">?</button>
+    <div id="infoModal">
+        <div id="infoContent">
+            <span id="closeInfoBtn">&times;</span>
+            <div id="infoText">
+Buscadores de la Sabiduría vs Saboteadores del Conocimiento
+
+## Descripción del Juego
+
+Un juego de preguntas y respuestas con roles ocultos donde la sabiduría se enfrenta al sabotaje. Los **Buscadores de la Sabiduría** deben responder correctamente las preguntas mientras identifican a los **Saboteadores del Conocimiento**, quienes intentarán confundirlos sin ser descubiertos.
+
+## Configuración Inicial
+
+### 1. Selección del Modo de Juego
+- **Modo Local**: Las preguntas se generan desde el sistema local
+- **Modo Online**: Las preguntas se generan usando la API de ChatGPT (requiere API Key)
+
+### 2. Configuración de Jugadores
+- **Mínimo**: 4 jugadores
+- **Máximo**: 10 jugadores
+- Introducir los nombres de todos los participantes
+
+### 3. Selección de Temas
+Elegir entre los siguientes temas disponibles:
+- Tecnología
+- Social
+- Historia
+- Geografía
+- Arte
+- Deportes
+
+### 4. Configuración de Dificultad
+Para cada tema seleccionado, elegir el nivel de dificultad:
+- Muy Fácil
+- Fácil
+- Medio
+- Difícil
+- Muy Difícil
+
+## Asignación de Roles
+
+### Proceso de Revelación
+1. Cada jugador debe acercarse al ordenador **individualmente**
+2. Los demás jugadores **NO DEBEN MIRAR**
+3. Pulsar el botón para revelar tu rol secreto
+4. Memorizar tu rol y pulsar nuevamente para ocultarlo
+5. El siguiente jugador repite el proceso
+
+### Tipos de Roles
+
+#### Buscadores de la Sabiduría
+- **Objetivo**: Responder correctamente 20 preguntas
+- **Misión secundaria**: Identificar a los Saboteadores del Conocimiento
+
+#### Saboteadores del Conocimiento
+- **Objetivo**: Hacer que se fallen 10 preguntas
+- **Estrategia**: Confundir y desorientar sin ser descubiertos
+
+## Distribución de Roles por Número de Jugadores
+
+| Jugadores | Saboteadores | Buscadores |
+|-----------|--------------|------------|
+| 4-5       | 1            | 3-4        |
+| 6-7       | 2            | 4-5        |
+| 8-10      | 3            | 5-7        |
+
+## Mecánica de Juego
+
+### Desarrollo de cada Ronda
+1. **Generación de Pregunta**: Se presenta una pregunta aleatoria basada en los temas y dificultades seleccionados
+2. **Fase de Debate**: Todos los jugadores discuten y debaten la respuesta
+3. **Decisión Grupal**: El grupo debe llegar a un consenso sobre la respuesta
+4. **Revelación**: Se muestra la respuesta correcta
+5. **Registro**: Se contabiliza si la respuesta fue correcta o incorrecta
+
+### Estrategias por Rol
+
+#### Para Buscadores de la Sabiduría
+- Compartir conocimientos genuinos
+- Observar comportamientos sospechosos
+- Identificar quién proporciona información errónea deliberadamente
+- Trabajar en equipo para alcanzar las 20 respuestas correctas
+
+#### Para Saboteadores del Conocimiento
+- Proporcionar información falsa de manera sutil
+- Crear confusión sin ser obvios
+- Desviar las discusiones hacia respuestas incorrectas
+- Mantener la fachada de estar ayudando
+
+## Condiciones de Victoria
+
+### Los Buscadores de la Sabiduría Ganan Si:
+- Responden correctamente **20 preguntas**
+
+### Los Saboteadores del Conocimiento Ganan Si:
+- Se fallan **10 preguntas**
+
+## Reglas Importantes
+
+### Normas de Comportamiento
+- **Confidencialidad**: No revelar tu rol a otros jugadores
+- **Participación**: Todos los jugadores deben participar en los debates
+- **Respeto**: Mantener un ambiente de juego limpio y divertido
+- **No Trampas**: No usar dispositivos externos para buscar respuestas
+
+### Reglas del Debate
+- Cada jugador puede expresar su opinión sobre la respuesta
+- Los debates deben ser constructivos y basados en argumentos
+- No se permite el voto directo; debe llegarse a un consenso
+- El tiempo de debate puede ser limitado según la dinámica del grupo
+
+### Penalizaciones
+- Revelar tu rol: Descalificación automática
+- Usar ayudas externas: Respuesta automáticamente incorrecta
+- Comportamiento antideportivo: Advertencia o expulsión según gravedad
+
+## Consejos para una Buena Partida
+
+### Para el Moderador/Sistema
+- Asegurar que todos entiendan las reglas antes de comenzar
+- Mantener el registro preciso de respuestas correctas/incorrectas
+- Facilitar los debates sin influir en las respuestas
+- Crear un ambiente donde todos se sientan cómodos participando
+
+### Para todos los Jugadores
+- Mantén tu rol en secreto hasta el final
+- Participa activamente en todos los debates
+- Observa los patrones de comportamiento de otros jugadores
+- Disfruta del juego independientemente del resultado
+
+## Elementos Futuros (En Desarrollo)
+
+### Comodines
+- Sistema de comodines especiales que pueden alterar la dinámica del juego
+- Efectos especiales que pueden ayudar o dificultar a los diferentes roles
+
+¡Que comience la batalla entre la sabiduría y el sabotaje!
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>
