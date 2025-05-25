@@ -426,13 +426,17 @@ function revealRole() {
     const role = playerRoles[player].role;
     let text = '';
 
+    roleInfoEl.classList.remove('role-impostor', 'role-normal');
+
     if (role === 'saboteador') {
         const others = impostorNames.filter(n => n !== player);
         text = others.length
             ? `Eres <strong>Saboteador del Conocimiento</strong>. Los otros saboteadores son: ${others.join(', ')}`
             : 'Eres el <strong>Saboteador del Conocimiento</strong>.';
+        roleInfoEl.classList.add('role-impostor');
     } else {
         text = 'Eres <strong>Buscador de la Sabiduría</strong>.';
+        roleInfoEl.classList.add('role-normal');
     }
 
     roleInfoEl.innerHTML = text;
@@ -718,7 +722,18 @@ function restartGame() {
         };
         updateStatsDisplay();
         saveStats();
-        
+
+        // Limpiar roles actuales para que se reasignen en la próxima partida
+        playerRoles = {};
+        impostorNames = [];
+
+        // Resetear pantalla de roles
+        rolesScreen.style.display = 'none';
+        roleInfoEl.style.display = 'none';
+        roleInfoEl.textContent = '';
+        showRoleBtn.style.display = 'inline-block';
+        hideRoleBtn.style.display = 'none';
+
         // Ocultar pantalla de juego
         gameScreen.style.display = 'none';
         
