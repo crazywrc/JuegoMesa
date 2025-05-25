@@ -3,8 +3,11 @@ let apiKey = null;
 let stats = {
     totalQuestions: 0,
     correctAnswers: 0,
+    incorrectAnswers: 0,
     streak: 0
 };
+
+let gameEnded = false;
 
 // Elementos del DOM
 const apiKeyInput = document.getElementById('apiKey');
@@ -47,6 +50,7 @@ let currentRoleIndex = 0;
 // Elementos de estadísticas
 const totalQuestionsEl = document.getElementById('totalQuestions');
 const correctAnswersEl = document.getElementById('correctAnswers');
+const incorrectAnswersEl = document.getElementById('incorrectAnswers');
 const streakEl = document.getElementById('streak');
 
 // Configuración de temas
@@ -103,6 +107,10 @@ function loadSavedData() {
     chrome.storage.local.get(['stats'], (result) => {
         if (result.stats) {
             stats = result.stats;
+            // Asegurar que la nueva propiedad exista
+            if (typeof stats.incorrectAnswers !== 'number') {
+                stats.incorrectAnswers = 0;
+            }
             updateStatsDisplay();
             resetBtn.style.display = 'inline-block';
         }
@@ -468,6 +476,7 @@ function hideRoleAndNext() {
 function startGame() {
     // Iniciar una nueva ronda, vaciando el historial de preguntas
     questionHistory = {};
+    gameEnded = false;
     gameScreen.style.display = 'block';
     generateBtn.disabled = false;
 
@@ -695,12 +704,15 @@ function markAnswer(correct) {
         stats.streak++;
         showMessage(`¡Excelente! Racha actual: ${stats.streak} 🔥`, 'success');
     } else {
+        stats.incorrectAnswers++;
         stats.streak = 0;
         showMessage('¡Sigue intentando! La práctica hace al maestro 💪', 'success');
     }
-    
+
     updateStatsDisplay();
     saveStats();
+
+    checkGameEnd();
     
     // Remover los botones de feedback
     const feedbackDiv = document.getElementById('answerFeedback');
@@ -712,6 +724,7 @@ function markAnswer(correct) {
 function updateStatsDisplay() {
     totalQuestionsEl.textContent = stats.totalQuestions;
     correctAnswersEl.textContent = stats.correctAnswers;
+    incorrectAnswersEl.textContent = stats.incorrectAnswers;
     streakEl.textContent = stats.streak;
     
     // Agregar efectos visuales para la racha
@@ -737,10 +750,12 @@ function restartGame() {
         stats = {
             totalQuestions: 0,
             correctAnswers: 0,
+            incorrectAnswers: 0,
             streak: 0
         };
         // Vaciar historial de preguntas
         questionHistory = {};
+        gameEnded = false;
         updateStatsDisplay();
         saveStats();
 
@@ -774,4 +789,33 @@ function restartGame() {
         // Mostrar mensaje
         showMessage('Partida reiniciada. Las estadísticas se han restablecido. Configura los jugadores para comenzar de nuevo.', 'success');
     }
+}
+
+function checkGameEnd() {
+    if (gameEnded) return;
+    const incorrect = stats.incorrectAnswers;
+    if (stats.correctAnswers >= 20) {
+        showEndGame('buscador');
+    } else if (incorrect >= 10) {
+        showEndGame('saboteador');
+    }
+}
+
+function showEndGame(winnerRole) {
+    generateBtn.disabled = true;
+    showAnswerBtn.disabled = true;
+
+    gameEnded = true;
+
+    const winnerNames = players.filter(name => playerRoles[name]?.role === (winnerRole === 'buscador' ? 'buscador' : 'saboteador'));
+    const teamName = winnerRole === 'buscador' ? 'Buscadores de la Sabiduría' : 'Saboteadores del Conocimiento';
+
+    questionText.innerHTML = `
+        <div style="text-align:center;">
+            <h3>¡${teamName} han ganado!</h3>
+            <p>Integrantes: ${winnerNames.join(', ')}</p>
+        </div>
+    `;
+    answerBox.style.display = 'none';
+    showMessage('Fin de la partida', 'success');
 }
