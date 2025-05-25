@@ -1,5 +1,7 @@
 let currentQuestion = null;
 let apiKey = null;
+let localMode = false;
+let localQuestions = [];
 let stats = {
     totalQuestions: 0,
     correctAnswers: 0,
@@ -33,6 +35,7 @@ const hideRoleBtn = document.getElementById('hideRoleBtn');
 const gameScreen = document.getElementById('gameScreen');
 
 const apiKeyNextBtn = document.getElementById('apiKeyNextBtn');
+const localModeBtn = document.getElementById('localModeBtn');
 const playerNextBtn = document.getElementById('playerNextBtn');
 const startGameBtn = document.getElementById('startGameBtn');
 
@@ -81,6 +84,7 @@ apiKeyInput.addEventListener('keypress', (e) => {
 });
 
 apiKeyNextBtn.addEventListener('click', handleApiKeyStep);
+localModeBtn.addEventListener('click', useLocalMode);
 numPlayersSelect.addEventListener('change', updatePlayerNameInputs);
 startGameBtn.addEventListener('click', handlePlayerSetupAndStart);
 globalDifficulty.addEventListener('change', handleGlobalDifficultyChange);
@@ -146,6 +150,42 @@ function handleApiKeyStep() {
     } else {
         showMessage('Por favor, introduce una API Key válida.', 'error');
     }
+}
+
+function useLocalMode() {
+    localMode = true;
+    loadLocalQuestions();
+    apiSetupScreen.style.display = 'none';
+    playerSetupScreen.style.display = 'block';
+    updatePlayerNameInputs();
+    loadPlayersConfig();
+    showMessage('Modo local activado. Se usarán preguntas del archivo.', 'success');
+}
+
+function loadLocalQuestions() {
+    fetch('preguntas.csv')
+        .then(r => r.text())
+        .then(text => {
+            const lines = text.trim().split('\n').slice(1);
+            localQuestions = lines.map(line => {
+                const parts = line.split(',');
+                if (parts.length >= 4) {
+                    const [pregunta, respuesta, tema, dificultad] = parts;
+                    const topicId = tema.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                    return {
+                        pregunta: pregunta.trim(),
+                        respuesta: respuesta.trim(),
+                        categoriaId: topicId,
+                        categoria: tema.trim(),
+                        dificultad: dificultad.trim()
+                    };
+                }
+            }).filter(Boolean);
+        })
+        .catch(err => {
+            console.error('Error al cargar preguntas locales:', err);
+            showMessage('No se pudieron cargar las preguntas locales.', 'error');
+        });
 }
 
 function updatePlayerNameInputs() {
@@ -538,126 +578,121 @@ function showMessage(message, type) {
 }
 
 async function generateQuestion() {
-    if (!apiKey) {
+    if (!localMode && !apiKey) {
         showMessage('Por favor, configura tu API Key primero yendo a la configuración.', 'error');
         return;
     }
 
-    // Deshabilitar botón y mostrar loading
     generateBtn.disabled = true;
     generateBtnText.innerHTML = '<span class="loading"></span>Generando...';
     answerBox.style.display = 'none';
     showAnswerBtn.disabled = true;
 
-    // Obtener temas habilitados
     const enabledTopics = availableTopics.filter(topic => topicsConfig[topic.id]?.enabled);
-    
-    // Seleccionar aleatoriamente un tema de los habilitados
     const randomIndex = Math.floor(Math.random() * enabledTopics.length);
     const selectedTopic = enabledTopics[randomIndex];
     const selectedDifficulty = topicsConfig[selectedTopic.id].difficulty;
 
-    // Preguntas previas de este tema para evitar repeticiones
     const previousQuestions = questionHistory[selectedTopic.id] || [];
     const historyText = previousQuestions.length > 0
         ? `\nNo repitas ninguna de estas preguntas ya utilizadas:\n- ${previousQuestions.join('\n- ')}`
         : '';
 
     try {
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
-            },
-            body: JSON.stringify({
-                model: 'gpt-3.5-turbo',
-                messages: [{
-                    role: 'system',
-                    content: 'Eres un experto en cultura general que genera preguntas educativas interesantes. Debes generar preguntas del tema específico y dificultad exacta que se te solicita.'
-                }, {
-                    role: 'user',
-                    content: `Genera una pregunta de cultura general específicamente del tema "${selectedTopic.name}" con dificultad "${selectedDifficulty}".${historyText}
-
-                    Responde ÚNICAMENTE en el siguiente formato JSON:
-                    {
-                        "pregunta": "La pregunta aquí",
-                        "respuesta": "La respuesta detallada aquí (2-3 oraciones explicativas)",
-                        "dificultad": "${selectedDifficulty}",
-                        "categoria": "${selectedTopic.name}"
-                    }
-                    
-                    La pregunta debe ser específicamente del tema "${selectedTopic.name}" y tener la dificultad "${selectedDifficulty}".
-                    La respuesta debe ser informativa, educativa y contener datos interesantes.
-                    No incluyas texto adicional, solo el JSON.`
-                }],
-                temperature: 0.9,
-                max_tokens: 600
-            })
-        });
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error?.message || 'Error en la API');
-        }
-
-        const data = await response.json();
-        const content = data.choices[0].message.content;
-        
-        // Parsear el JSON de la respuesta
-        try {
-            currentQuestion = JSON.parse(content);
-            
-            // Actualizar estadísticas
-            stats.totalQuestions++;
-            updateStatsDisplay();
-            saveStats();
-            
-            // Mostrar la pregunta con badge de dificultad
-            const difficultyMap = {
-                'muy-facil': { class: 'easy', text: 'Muy Fácil' },
-                'facil': { class: 'easy', text: 'Fácil' },
-                'medio': { class: 'medium', text: 'Medio' },
-                'dificil': { class: 'hard', text: 'Difícil' },
-                'muy-dificil': { class: 'hard', text: 'Muy Difícil' }
-            };
-            
-            const difficulty = difficultyMap[currentQuestion.dificultad] || difficultyMap['medio'];
-            
-            // Incluir categoría si existe
-            const categoryText = currentQuestion.categoria ? 
-                `<span style="font-size: 0.8em; color: #666; margin-left: 10px;">📚 ${currentQuestion.categoria.toUpperCase()}</span>` : '';
-            
-            questionText.innerHTML = `
-                <span class="difficulty-badge ${difficulty.class}">${difficulty.text}</span>
-                ${categoryText}
-                <br><br>
-                ${currentQuestion.pregunta}
-            `;
-
-            // Guardar pregunta en el historial para evitar repeticiones
-            if (!questionHistory[selectedTopic.id]) {
-                questionHistory[selectedTopic.id] = [];
+        if (localMode) {
+            const availableQs = localQuestions.filter(q => q.categoriaId === selectedTopic.id && q.dificultad === selectedDifficulty && !previousQuestions.includes(q.pregunta));
+            if (availableQs.length === 0) {
+                showMessage('No hay más preguntas locales para este tema y dificultad.', 'error');
+                return;
             }
-            questionHistory[selectedTopic.id].push(currentQuestion.pregunta);
+            currentQuestion = availableQs[Math.floor(Math.random() * availableQs.length)];
+        } else {
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: 'gpt-3.5-turbo',
+                    messages: [{
+                        role: 'system',
+                        content: 'Eres un experto en cultura general que genera preguntas educativas interesantes. Debes generar preguntas del tema específico y dificultad exacta que se te solicita.'
+                    }, {
+                        role: 'user',
+                        content: `Genera una pregunta de cultura general específicamente del tema "${selectedTopic.name}" con dificultad "${selectedDifficulty}".${historyText}
 
-            showAnswerBtn.disabled = false;
-            resetBtn.style.display = 'inline-block';
-        } catch (parseError) {
-            console.error('Error al parsear JSON:', content);
-            throw new Error('Error al procesar la respuesta');
+                        Responde ÚNICAMENTE en el siguiente formato JSON:
+                        {
+                            "pregunta": "La pregunta aquí",
+                            "respuesta": "La respuesta detallada aquí (2-3 oraciones explicativas)",
+                            "dificultad": "${selectedDifficulty}",
+                            "categoria": "${selectedTopic.name}"
+                        }
+
+                        La pregunta debe ser específicamente del tema "${selectedTopic.name}" y tener la dificultad "${selectedDifficulty}".
+                        La respuesta debe ser informativa, educativa y contener datos interesantes.
+                        No incluyas texto adicional, solo el JSON.`
+                    }],
+                    temperature: 0.9,
+                    max_tokens: 600
+                })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error?.message || 'Error en la API');
+            }
+
+            const data = await response.json();
+            const content = data.choices[0].message.content;
+            currentQuestion = JSON.parse(content);
         }
 
+        stats.totalQuestions++;
+        updateStatsDisplay();
+        saveStats();
+
+        const difficultyMap = {
+            'muy-facil': { class: 'easy', text: 'Muy Fácil' },
+            'facil': { class: 'easy', text: 'Fácil' },
+            'medio': { class: 'medium', text: 'Medio' },
+            'dificil': { class: 'hard', text: 'Difícil' },
+            'muy-dificil': { class: 'hard', text: 'Muy Difícil' }
+        };
+
+        const difficulty = difficultyMap[currentQuestion.dificultad] || difficultyMap['medio'];
+        const categoryText = currentQuestion.categoria ?
+            `<span style="font-size: 0.8em; color: #666; margin-left: 10px;">📚 ${currentQuestion.categoria.toUpperCase()}</span>` : '';
+
+        questionText.innerHTML = `
+            <span class="difficulty-badge ${difficulty.class}">${difficulty.text}</span>
+            ${categoryText}
+            <br><br>
+            ${currentQuestion.pregunta}
+        `;
+
+        if (!questionHistory[selectedTopic.id]) {
+            questionHistory[selectedTopic.id] = [];
+        }
+        questionHistory[selectedTopic.id].push(currentQuestion.pregunta);
+
+        showAnswerBtn.disabled = false;
+        resetBtn.style.display = 'inline-block';
     } catch (error) {
         console.error('Error:', error);
-        if (error.message.includes('401')) {
-            showMessage('API Key inválida. Por favor verifica tu clave.', 'error');
-        } else if (error.message.includes('429')) {
-            showMessage('Has excedido tu cuota de API. Verifica tu cuenta de OpenAI.', 'error');
-        } else if (error.message.includes('Failed to fetch')) {
-            showMessage('Error de conexión. Verifica tu conexión a internet.', 'error');
+        if (!localMode) {
+            if (error.message.includes('401')) {
+                showMessage('API Key inválida. Por favor verifica tu clave.', 'error');
+            } else if (error.message.includes('429')) {
+                showMessage('Has excedido tu cuota de API. Verifica tu cuenta de OpenAI.', 'error');
+            } else if (error.message.includes('Failed to fetch')) {
+                showMessage('Error de conexión. Verifica tu conexión a internet.', 'error');
+            } else {
+                showMessage('Error: ' + error.message, 'error');
+            }
         } else {
-            showMessage('Error: ' + error.message, 'error');
+            showMessage('Error al obtener una pregunta local.', 'error');
         }
         questionText.textContent = 'Error al generar la pregunta. Intenta nuevamente.';
     } finally {
