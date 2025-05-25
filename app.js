@@ -11,6 +11,24 @@ let stats = {
 
 let gameEnded = false;
 
+function getStoredItem(key) {
+    const value = localStorage.getItem(key);
+    try {
+        return value ? JSON.parse(value) : null;
+    } catch (e) {
+        return value;
+    }
+}
+
+function setStoredItem(key, value) {
+    try {
+        const stored = typeof value === 'string' ? value : JSON.stringify(value);
+        localStorage.setItem(key, stored);
+    } catch (e) {
+        console.error('Error saving data', e);
+    }
+}
+
 // Elementos del DOM
 const apiKeyInput = document.getElementById('apiKey');
 const generateBtn = document.getElementById('generateBtn');
@@ -98,7 +116,7 @@ loadSavedData();
 
 function loadSavedData() {
     // Cargar API key
-    const storedApiKey = localStorage.getItem('apiKey');
+    const storedApiKey = getStoredItem('apiKey');
     if (storedApiKey) {
         apiKey = storedApiKey;
         apiKeyInput.value = storedApiKey;
@@ -107,9 +125,9 @@ function loadSavedData() {
     }
 
     // Cargar estadísticas
-    const storedStats = localStorage.getItem('stats');
+    const storedStats = getStoredItem('stats');
     if (storedStats) {
-        stats = JSON.parse(storedStats);
+        stats = storedStats;
         if (typeof stats.incorrectAnswers !== 'number') {
             stats.incorrectAnswers = 0;
         }
@@ -118,17 +136,17 @@ function loadSavedData() {
     }
 
     // Cargar configuración de jugadores
-    const storedPlayers = localStorage.getItem('players');
-    const storedNumPlayers = localStorage.getItem('numPlayers');
-    if (storedPlayers && storedNumPlayers) {
-        players = JSON.parse(storedPlayers);
+    const storedPlayers = getStoredItem('players');
+    const storedNumPlayers = getStoredItem('numPlayers');
+    if (storedPlayers && storedNumPlayers !== null) {
+        players = storedPlayers;
         numPlayers = parseInt(storedNumPlayers, 10);
     }
 
     // Cargar configuración de temas
-    const storedTopics = localStorage.getItem('topicsConfig');
+    const storedTopics = getStoredItem('topicsConfig');
     if (storedTopics) {
-        topicsConfig = JSON.parse(storedTopics);
+        topicsConfig = storedTopics;
     }
 }
 
@@ -136,7 +154,7 @@ function handleApiKeyStep() {
     const inputApiKey = apiKeyInput.value.trim();
     if (inputApiKey) {
         apiKey = inputApiKey;
-        localStorage.setItem('apiKey', apiKey);
+        setStoredItem('apiKey', apiKey);
         showMessage('API Key guardada correctamente.', 'success');
         apiSetupScreen.style.display = 'none';
         playerSetupScreen.style.display = 'block';
@@ -259,10 +277,10 @@ function handlePlayerNext() {
 }
 
 function loadPlayersConfig() {
-    const storedPlayers = localStorage.getItem('players');
-    const storedNumPlayers = localStorage.getItem('numPlayers');
-    if (storedPlayers && storedNumPlayers) {
-        const savedPlayers = JSON.parse(storedPlayers);
+    const storedPlayers = getStoredItem('players');
+    const storedNumPlayers = getStoredItem('numPlayers');
+    if (storedPlayers && storedNumPlayers !== null) {
+        const savedPlayers = storedPlayers;
         const savedNumPlayers = parseInt(storedNumPlayers, 10);
 
         if (savedNumPlayers !== parseInt(numPlayersSelect.value)) {
@@ -528,13 +546,13 @@ function startGame() {
 }
 
 function saveTopicsConfig() {
-    localStorage.setItem('topicsConfig', JSON.stringify(topicsConfig));
+    setStoredItem('topicsConfig', topicsConfig);
 }
 
 function loadTopicsConfig() {
-    const storedTopics = localStorage.getItem('topicsConfig');
+    const storedTopics = getStoredItem('topicsConfig');
     if (storedTopics) {
-        topicsConfig = JSON.parse(storedTopics);
+        topicsConfig = storedTopics;
         Object.keys(topicsConfig).forEach(topicId => {
             const checkbox = document.getElementById(`enable-${topicId}`);
             const difficultySelect = document.getElementById(`difficulty-${topicId}`);
@@ -549,8 +567,8 @@ function loadTopicsConfig() {
 }
 
 function savePlayersConfig() {
-    localStorage.setItem('players', JSON.stringify(players));
-    localStorage.setItem('numPlayers', numPlayers.toString());
+    setStoredItem('players', players);
+    setStoredItem('numPlayers', numPlayers);
 }
 
 function showMessage(message, type) {
@@ -762,7 +780,7 @@ function updateStatsDisplay() {
 }
 
 function saveStats() {
-    localStorage.setItem('stats', JSON.stringify(stats));
+    setStoredItem('stats', stats);
 }
 
 function restartGame() {
