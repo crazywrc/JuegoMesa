@@ -60,6 +60,8 @@ const availableTopics = [
 ];
 
 let topicsConfig = {};
+// Historial de preguntas por ronda (por tema)
+let questionHistory = {};
 
 // Elementos de configuración de temas
 const globalDifficulty = document.getElementById('globalDifficulty');
@@ -374,6 +376,9 @@ function handlePlayerSetupAndStart() {
         showMessage('Debes tener al menos un tema activado para comenzar.', 'error');
         return;
     }
+
+    // Reiniciar historial de preguntas para una nueva ronda
+    questionHistory = {};
     
     // Guardar configuración final
     savePlayersConfig();
@@ -461,6 +466,8 @@ function hideRoleAndNext() {
 }
 
 function startGame() {
+    // Iniciar una nueva ronda, vaciando el historial de preguntas
+    questionHistory = {};
     gameScreen.style.display = 'block';
     generateBtn.disabled = false;
 
@@ -541,6 +548,12 @@ async function generateQuestion() {
     const selectedTopic = enabledTopics[randomIndex];
     const selectedDifficulty = topicsConfig[selectedTopic.id].difficulty;
 
+    // Preguntas previas de este tema para evitar repeticiones
+    const previousQuestions = questionHistory[selectedTopic.id] || [];
+    const historyText = previousQuestions.length > 0
+        ? `\nNo repitas ninguna de estas preguntas ya utilizadas:\n- ${previousQuestions.join('\n- ')}`
+        : '';
+
     try {
         const response = await fetch('https://api.openai.com/v1/chat/completions', {
             method: 'POST',
@@ -555,8 +568,8 @@ async function generateQuestion() {
                     content: 'Eres un experto en cultura general que genera preguntas educativas interesantes. Debes generar preguntas del tema específico y dificultad exacta que se te solicita.'
                 }, {
                     role: 'user',
-                    content: `Genera una pregunta de cultura general específicamente del tema "${selectedTopic.name}" con dificultad "${selectedDifficulty}".
-                    
+                    content: `Genera una pregunta de cultura general específicamente del tema "${selectedTopic.name}" con dificultad "${selectedDifficulty}".${historyText}
+
                     Responde ÚNICAMENTE en el siguiente formato JSON:
                     {
                         "pregunta": "La pregunta aquí",
@@ -612,7 +625,13 @@ async function generateQuestion() {
                 <br><br>
                 ${currentQuestion.pregunta}
             `;
-            
+
+            // Guardar pregunta en el historial para evitar repeticiones
+            if (!questionHistory[selectedTopic.id]) {
+                questionHistory[selectedTopic.id] = [];
+            }
+            questionHistory[selectedTopic.id].push(currentQuestion.pregunta);
+
             showAnswerBtn.disabled = false;
             resetBtn.style.display = 'inline-block';
         } catch (parseError) {
@@ -720,6 +739,8 @@ function restartGame() {
             correctAnswers: 0,
             streak: 0
         };
+        // Vaciar historial de preguntas
+        questionHistory = {};
         updateStatsDisplay();
         saveStats();
 
