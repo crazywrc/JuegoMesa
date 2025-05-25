@@ -150,9 +150,22 @@ function loadSavedData() {
     }
 }
 
-function handleApiKeyStep() {
+async function handleApiKeyStep() {
     const inputApiKey = apiKeyInput.value.trim();
-    if (inputApiKey) {
+    if (!inputApiKey) {
+        showMessage('Por favor, introduce una API Key válida.', 'error');
+        return;
+    }
+
+    apiKeyNextBtn.disabled = true;
+    apiKeyNextBtn.textContent = 'Verificando...';
+
+    const valid = await verifyApiKey(inputApiKey);
+
+    apiKeyNextBtn.disabled = false;
+    apiKeyNextBtn.textContent = 'Continuar';
+
+    if (valid) {
         apiKey = inputApiKey;
         setStoredItem('apiKey', apiKey);
         showMessage('API Key guardada correctamente.', 'success');
@@ -161,7 +174,18 @@ function handleApiKeyStep() {
         updatePlayerNameInputs();
         loadPlayersConfig();
     } else {
-        showMessage('Por favor, introduce una API Key válida.', 'error');
+        showMessage('API Key inválida. Por favor verifica tu clave.', 'error');
+    }
+}
+
+async function verifyApiKey(key) {
+    try {
+        const response = await fetch('https://api.openai.com/v1/models', {
+            headers: { 'Authorization': `Bearer ${key}` }
+        });
+        return response.ok;
+    } catch (err) {
+        return false;
     }
 }
 
