@@ -165,6 +165,34 @@ button:disabled {
     border: 2px solid #2196f3;
 }
 
+.setup-box {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #2196f3;
+}
+.setup-box select,
+.setup-box input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.setup-box button {
+    background: #2196f3;
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.9em;
+}
+
+.setup-box button:hover {
+    background: #1976d2;
+}
+
 .api-setup h3 {
     font-size: 1.1em;
     margin-bottom: 10px;
@@ -245,4 +273,27 @@ button:disabled {
 
 .info-box a:hover {
     text-decoration: underline;
+}
+
+/* Roles display styling */
+.role-name {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.role-info {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.role-normal {
+    color: #2e7d32; /* green */
+}
+
+.role-impostor {
+    color: #c62828; /* red */
 }
