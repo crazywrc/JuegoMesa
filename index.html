@@ -695,6 +695,78 @@
         .role-impostor {
             color: #c62828; /* red */
         }
+
+        /* Help button styles */
+        #infoBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #infoModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            overflow: auto;
+        }
+
+        #infoContent {
+            background: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            color: #2d3748;
+        }
+
+        #closeInfoBtn {
+            float: right;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        #infoText {
+            max-height: 70vh;
+            overflow-y: auto;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        #infoText table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        #infoText th, #infoText td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #infoText th {
+            background: #667eea;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -830,6 +902,181 @@
 
         <div class="error-message" id="errorMessage"></div>
         <div class="success-message" id="successMessage"></div>
+    </div>
+
+    <button id="infoBtn">?</button>
+    <div id="infoModal">
+        <div id="infoContent">
+            <span id="closeInfoBtn">&times;</span>
+            <div id="infoText">
+                <h2>Buscadores de la Sabiduría vs Saboteadores del Conocimiento</h2>
+
+                <h3>Descripción del Juego</h3>
+                <p>Un juego de preguntas y respuestas con roles ocultos donde la sabiduría se enfrenta al sabotaje. Los <strong>Buscadores de la Sabiduría</strong> deben responder correctamente las preguntas mientras identifican a los <strong>Saboteadores del Conocimiento</strong>, quienes intentarán confundirlos sin ser descubiertos.</p>
+
+                <h3>Configuración Inicial</h3>
+                <h4>1. Selección del Modo de Juego</h4>
+                <ul>
+                    <li><strong>Modo Local</strong>: Las preguntas se generan desde el sistema local</li>
+                    <li><strong>Modo Online</strong>: Las preguntas se generan usando la API de ChatGPT (requiere API Key)</li>
+                </ul>
+
+                <h4>2. Configuración de Jugadores</h4>
+                <ul>
+                    <li><strong>Mínimo</strong>: 4 jugadores</li>
+                    <li><strong>Máximo</strong>: 10 jugadores</li>
+                    <li>Introducir los nombres de todos los participantes</li>
+                </ul>
+
+                <h4>3. Selección de Temas</h4>
+                <p>Elegir entre los siguientes temas disponibles:</p>
+                <ul>
+                    <li>Tecnología</li>
+                    <li>Social</li>
+                    <li>Historia</li>
+                    <li>Geografía</li>
+                    <li>Arte</li>
+                    <li>Deportes</li>
+                </ul>
+
+                <h4>4. Configuración de Dificultad</h4>
+                <p>Para cada tema seleccionado, elegir el nivel de dificultad:</p>
+                <ul>
+                    <li>Muy Fácil</li>
+                    <li>Fácil</li>
+                    <li>Medio</li>
+                    <li>Difícil</li>
+                    <li>Muy Difícil</li>
+                </ul>
+
+                <h3>Asignación de Roles</h3>
+                <h4>Proceso de Revelación</h4>
+                <ol>
+                    <li>Cada jugador debe acercarse al ordenador <strong>individualmente</strong></li>
+                    <li>Los demás jugadores <strong>NO DEBEN MIRAR</strong></li>
+                    <li>Pulsar el botón para revelar tu rol secreto</li>
+                    <li>Memorizar tu rol y pulsar nuevamente para ocultarlo</li>
+                    <li>El siguiente jugador repite el proceso</li>
+                </ol>
+
+                <h4>Tipos de Roles</h4>
+                <h5>Buscadores de la Sabiduría</h5>
+                <ul>
+                    <li><strong>Objetivo</strong>: Responder correctamente 20 preguntas</li>
+                    <li><strong>Misión secundaria</strong>: Identificar a los Saboteadores del Conocimiento</li>
+                </ul>
+
+                <h5>Saboteadores del Conocimiento</h5>
+                <ul>
+                    <li><strong>Objetivo</strong>: Hacer que se fallen 10 preguntas</li>
+                    <li><strong>Estrategia</strong>: Confundir y desorientar sin ser descubiertos</li>
+                </ul>
+
+                <h3>Distribución de Roles por Número de Jugadores</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jugadores</th>
+                            <th>Saboteadores</th>
+                            <th>Buscadores</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>4-5</td><td>1</td><td>3-4</td></tr>
+                        <tr><td>6-7</td><td>2</td><td>4-5</td></tr>
+                        <tr><td>8-10</td><td>3</td><td>5-7</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Mecánica de Juego</h3>
+                <h4>Desarrollo de cada Ronda</h4>
+                <ol>
+                    <li><strong>Generación de Pregunta</strong>: Se presenta una pregunta aleatoria basada en los temas y dificultades seleccionados</li>
+                    <li><strong>Fase de Debate</strong>: Todos los jugadores discuten y debaten la respuesta</li>
+                    <li><strong>Decisión Grupal</strong>: El grupo debe llegar a un consenso sobre la respuesta</li>
+                    <li><strong>Revelación</strong>: Se muestra la respuesta correcta</li>
+                    <li><strong>Registro</strong>: Se contabiliza si la respuesta fue correcta o incorrecta</li>
+                </ol>
+
+                <h4>Estrategias por Rol</h4>
+                <h5>Para Buscadores de la Sabiduría</h5>
+                <ul>
+                    <li>Compartir conocimientos genuinos</li>
+                    <li>Observar comportamientos sospechosos</li>
+                    <li>Identificar quién proporciona información errónea deliberadamente</li>
+                    <li>Trabajar en equipo para alcanzar las 20 respuestas correctas</li>
+                </ul>
+
+                <h5>Para Saboteadores del Conocimiento</h5>
+                <ul>
+                    <li>Proporcionar información falsa de manera sutil</li>
+                    <li>Crear confusión sin ser obvios</li>
+                    <li>Desviar las discusiones hacia respuestas incorrectas</li>
+                    <li>Mantener la fachada de estar ayudando</li>
+                </ul>
+
+                <h3>Condiciones de Victoria</h3>
+                <h4>Los Buscadores de la Sabiduría Ganan Si:</h4>
+                <ul>
+                    <li>Responden correctamente <strong>20 preguntas</strong></li>
+                </ul>
+
+                <h4>Los Saboteadores del Conocimiento Ganan Si:</h4>
+                <ul>
+                    <li>Se fallan <strong>10 preguntas</strong></li>
+                </ul>
+
+                <h3>Reglas Importantes</h3>
+                <h4>Normas de Comportamiento</h4>
+                <ul>
+                    <li><strong>Confidencialidad</strong>: No revelar tu rol a otros jugadores</li>
+                    <li><strong>Participación</strong>: Todos los jugadores deben participar en los debates</li>
+                    <li><strong>Respeto</strong>: Mantener un ambiente de juego limpio y divertido</li>
+                    <li><strong>No Trampas</strong>: No usar dispositivos externos para buscar respuestas</li>
+                </ul>
+
+                <h4>Reglas del Debate</h4>
+                <ul>
+                    <li>Cada jugador puede expresar su opinión sobre la respuesta</li>
+                    <li>Los debates deben ser constructivos y basados en argumentos</li>
+                    <li>No se permite el voto directo; debe llegarse a un consenso</li>
+                    <li>El tiempo de debate puede ser limitado según la dinámica del grupo</li>
+                </ul>
+
+                <h4>Penalizaciones</h4>
+                <ul>
+                    <li>Revelar tu rol: Descalificación automática</li>
+                    <li>Usar ayudas externas: Respuesta automáticamente incorrecta</li>
+                    <li>Comportamiento antideportivo: Advertencia o expulsión según gravedad</li>
+                </ul>
+
+                <h3>Consejos para una Buena Partida</h3>
+                <h4>Para el Moderador/Sistema</h4>
+                <ul>
+                    <li>Asegurar que todos entiendan las reglas antes de comenzar</li>
+                    <li>Mantener el registro preciso de respuestas correctas/incorrectas</li>
+                    <li>Facilitar los debates sin influir en las respuestas</li>
+                    <li>Crear un ambiente donde todos se sientan cómodos participando</li>
+                </ul>
+
+                <h4>Para todos los Jugadores</h4>
+                <ul>
+                    <li>Mantén tu rol en secreto hasta el final</li>
+                    <li>Participa activamente en todos los debates</li>
+                    <li>Observa los patrones de comportamiento de otros jugadores</li>
+                    <li>Disfruta del juego independientemente del resultado</li>
+                </ul>
+
+                <h3>Elementos Futuros (En Desarrollo)</h3>
+                <h4>Comodines</h4>
+                <ul>
+                    <li>Sistema de comodines especiales que pueden alterar la dinámica del juego</li>
+                    <li>Efectos especiales que pueden ayudar o dificultar a los diferentes roles</li>
+                </ul>
+
+                <p><strong>¡Que comience la batalla entre la sabiduría y el sabotaje!</strong></p>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>

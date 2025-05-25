@@ -40,6 +40,9 @@ const answerText = document.getElementById('answerText');
 const errorMessage = document.getElementById('errorMessage');
 const successMessage = document.getElementById('successMessage');
 const generateBtnText = document.getElementById('generateBtnText');
+const infoBtn = document.getElementById('infoBtn');
+const infoModal = document.getElementById('infoModal');
+const closeInfoBtn = document.getElementById('closeInfoBtn');
 
 // Elementos del DOM para el flujo de configuración
 const apiSetupScreen = document.getElementById('apiSetupScreen');
@@ -110,6 +113,15 @@ applyGlobalBtn.addEventListener('click', applyGlobalDifficulty);
 playerNextBtn.addEventListener('click', handlePlayerNext);
 showRoleBtn.addEventListener('click', revealRole);
 hideRoleBtn.addEventListener('click', hideRoleAndNext);
+infoBtn.addEventListener('click', () => {
+    infoModal.style.display = 'block';
+});
+closeInfoBtn.addEventListener('click', () => {
+    infoModal.style.display = 'none';
+});
+infoModal.addEventListener('click', (e) => {
+    if (e.target === infoModal) infoModal.style.display = 'none';
+});
 
 // Cargar datos guardados
 loadSavedData();
