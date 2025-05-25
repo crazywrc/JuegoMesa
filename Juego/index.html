@@ -676,6 +676,10 @@
                 padding: 20px;
             }
         }
+        #roleInfo {
+            font-size: 1.2em;
+            color: #2d3748;
+        }
     </style>
 </head>
 <body>
@@ -750,8 +754,19 @@
                 <button id="startGameBtn">Comenzar Juego</button>
             </div>
         </div>
-        
-        <!-- Step 4: Game Screen (Main Game Interface) -->
+
+        <!-- Step 4: Roles -->
+        <div class="setup-box" id="rolesScreen" style="display:none;">
+            <h3>🎭 Revelación de Roles</h3>
+            <p id="currentPlayerRoleName" style="text-align:center;font-weight:600;margin-bottom:15px;"></p>
+            <div id="roleInfo" style="display:none;margin-bottom:20px;text-align:center;"></div>
+            <div class="button-container">
+                <button id="showRoleBtn">Ver Rol</button>
+                <button id="hideRoleBtn" style="display:none;">Esconder Rol</button>
+            </div>
+        </div>
+
+        <!-- Step 5: Game Screen (Main Game Interface) -->
         <div id="gameScreen" style="display:none;">
             <div class="stats-container">
                 <div class="stat-box">
