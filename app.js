@@ -558,6 +558,8 @@ function hideRoleAndNext() {
 }
 
 function startGame() {
+    // Reiniciar estadísticas al iniciar una nueva partida
+    resetStats();
     // Iniciar una nueva ronda, vaciando el historial de preguntas
     questionHistory = {};
     gameEnded = false;
@@ -819,20 +821,23 @@ function saveStats() {
     setStoredItem('stats', stats);
 }
 
+function resetStats() {
+    stats = {
+        totalQuestions: 0,
+        correctAnswers: 0,
+        incorrectAnswers: 0,
+        streak: 0
+    };
+    updateStatsDisplay();
+    saveStats();
+}
+
 function restartGame() {
     if (confirm('¿Estás seguro de que quieres reiniciar la partida? Se reiniciarán las estadísticas pero se mantendrá la configuración de jugadores y temas.')) {
-        // Reiniciar estadísticas
-        stats = {
-            totalQuestions: 0,
-            correctAnswers: 0,
-            incorrectAnswers: 0,
-            streak: 0
-        };
+        resetStats();
         // Vaciar historial de preguntas
         questionHistory = {};
         gameEnded = false;
-        updateStatsDisplay();
-        saveStats();
 
         // Limpiar roles actuales para que se reasignen en la próxima partida
         playerRoles = {};
