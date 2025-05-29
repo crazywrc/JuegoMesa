@@ -123,6 +123,17 @@ infoModal.addEventListener('click', (e) => {
     if (e.target === infoModal) infoModal.style.display = 'none';
 });
 
+const tabLinks = document.querySelectorAll('.tab-link');
+const tabContents = document.querySelectorAll('.tab-content');
+tabLinks.forEach(btn => {
+    btn.addEventListener('click', () => {
+        tabLinks.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(tc => tc.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+});
+
 // Cargar datos guardados
 loadSavedData();
 
