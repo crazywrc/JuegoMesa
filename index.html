@@ -770,6 +770,38 @@
             background: #667eea;
             color: white;
         }
+
+        .tab-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .tab-bar button {
+            flex: 1 1 150px;
+            padding: 8px 12px;
+            border: none;
+            background: #f1f5f9;
+            cursor: pointer;
+            font-weight: 600;
+            color: #2d3748;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .tab-bar button.active {
+            background: #667eea;
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -911,12 +943,20 @@
     <div id="infoModal">
         <div id="infoContent">
             <span id="closeInfoBtn">&times;</span>
-            <div id="infoText">
+            <div class="tab-bar">
+                <button class="tab-link active" data-tab="tab-desc">Descripción del Juego</button>
+                <button class="tab-link" data-tab="tab-config">Configuración Inicial</button>
+                <button class="tab-link" data-tab="tab-roles">Asignación de Roles</button>
+                <button class="tab-link" data-tab="tab-reglas">Mecánica y Reglas</button>
+                <button class="tab-link" data-tab="tab-victoria">Condiciones de Victoria</button>
+                <button class="tab-link" data-tab="tab-consejos">Consejos para una Buena Partida</button>
+            </div>
+            <div id="tab-desc" class="tab-content active">
                 <h2>Buscadores de la Sabiduría vs Saboteadores del Conocimiento</h2>
-
                 <h3>Descripción del Juego</h3>
                 <p>Un juego de preguntas y respuestas con roles ocultos donde la sabiduría se enfrenta al sabotaje. Los <strong>Buscadores de la Sabiduría</strong> deben responder correctamente las preguntas mientras identifican a los <strong>Saboteadores del Conocimiento</strong>, quienes intentarán confundirlos sin ser descubiertos.</p>
-
+            </div>
+            <div id="tab-config" class="tab-content">
                 <h3>Configuración Inicial</h3>
                 <h4>1. Selección del Modo de Juego</h4>
                 <ul>
@@ -951,7 +991,8 @@
                     <li>Difícil</li>
                     <li>Muy Difícil</li>
                 </ul>
-
+            </div>
+            <div id="tab-roles" class="tab-content">
                 <h3>Asignación de Roles</h3>
                 <h4>Proceso de Revelación</h4>
                 <ol>
@@ -990,7 +1031,8 @@
                         <tr><td>8-10</td><td>3</td><td>5-7</td></tr>
                     </tbody>
                 </table>
-
+            </div>
+            <div id="tab-reglas" class="tab-content">
                 <h3>Mecánica de Juego</h3>
                 <h4>Desarrollo de cada Ronda</h4>
                 <ol>
@@ -1018,17 +1060,6 @@
                     <li>Mantener la fachada de estar ayudando</li>
                 </ul>
 
-                <h3>Condiciones de Victoria</h3>
-                <h4>Los Buscadores de la Sabiduría Ganan Si:</h4>
-                <ul>
-                    <li>Responden correctamente <strong>20 preguntas</strong></li>
-                </ul>
-
-                <h4>Los Saboteadores del Conocimiento Ganan Si:</h4>
-                <ul>
-                    <li>Se fallan <strong>10 preguntas</strong></li>
-                </ul>
-
                 <h3>Reglas Importantes</h3>
                 <h4>Normas de Comportamiento</h4>
                 <ul>
@@ -1053,6 +1084,22 @@
                     <li>Comportamiento antideportivo: Advertencia o expulsión según gravedad</li>
                 </ul>
 
+            </div>
+
+            <div id="tab-victoria" class="tab-content">
+                <h3>Condiciones de Victoria</h3>
+                <h4>Los Buscadores de la Sabiduría Ganan Si:</h4>
+                <ul>
+                    <li>Responden correctamente <strong>20 preguntas</strong></li>
+                </ul>
+
+                <h4>Los Saboteadores del Conocimiento Ganan Si:</h4>
+                <ul>
+                    <li>Se fallan <strong>10 preguntas</strong></li>
+                </ul>
+            </div>
+
+            <div id="tab-consejos" class="tab-content">
                 <h3>Consejos para una Buena Partida</h3>
                 <h4>Para el Moderador/Sistema</h4>
                 <ul>
