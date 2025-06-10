@@ -65,11 +65,17 @@ let players = [];
 let numPlayers = 0;
 const numPlayersSelect = document.getElementById('numPlayers');
 const namesContainer = document.getElementById('namesContainer');
+const voteThresholdInput = document.getElementById('voteThresholdInput');
+const voteModal = document.getElementById('voteModal');
+const voteOptions = document.getElementById('voteOptions');
+const closeVoteBtn = document.getElementById('closeVoteBtn');
 
 // Roles
 let playerRoles = {};
 let impostorNames = [];
 let currentRoleIndex = 0;
+let voteThreshold = 6;
+let voteTriggered = false;
 
 // Elementos de estadísticas
 const totalQuestionsEl = document.getElementById('totalQuestions');
@@ -122,6 +128,23 @@ closeInfoBtn.addEventListener('click', () => {
 infoModal.addEventListener('click', (e) => {
     if (e.target === infoModal) infoModal.style.display = 'none';
 });
+if (voteThresholdInput) {
+    voteThresholdInput.addEventListener('change', () => {
+        const val = parseInt(voteThresholdInput.value, 10);
+        voteThreshold = isNaN(val) ? 6 : val;
+        setStoredItem('voteThreshold', voteThreshold);
+    });
+}
+if (closeVoteBtn) {
+    closeVoteBtn.addEventListener('click', () => {
+        voteModal.style.display = 'none';
+    });
+}
+if (voteModal) {
+    voteModal.addEventListener('click', (e) => {
+        if (e.target === voteModal) voteModal.style.display = 'none';
+    });
+}
 
 const tabLinks = document.querySelectorAll('.tab-link');
 const tabContents = document.querySelectorAll('.tab-content');
@@ -161,9 +184,16 @@ function loadSavedData() {
     // Cargar configuración de jugadores
     const storedPlayers = getStoredItem('players');
     const storedNumPlayers = getStoredItem('numPlayers');
+    const storedVote = getStoredItem('voteThreshold');
     if (storedPlayers && storedNumPlayers !== null) {
         players = storedPlayers;
         numPlayers = parseInt(storedNumPlayers, 10);
+    }
+    if (storedVote) {
+        voteThreshold = parseInt(storedVote, 10);
+        if (voteThresholdInput) {
+            voteThresholdInput.value = voteThreshold;
+        }
     }
 
     // Cargar configuración de temas
@@ -346,6 +376,13 @@ function loadPlayersConfig() {
 
             players = [...savedPlayers];
         }, 100);
+    }
+
+    if (storedVote) {
+        voteThreshold = parseInt(storedVote, 10);
+        if (voteThresholdInput) {
+            voteThresholdInput.value = voteThreshold;
+        }
     }
 }
 
@@ -618,6 +655,7 @@ function loadTopicsConfig() {
 function savePlayersConfig() {
     setStoredItem('players', players);
     setStoredItem('numPlayers', numPlayers);
+    setStoredItem('voteThreshold', voteThreshold);
 }
 
 function showMessage(message, type) {
@@ -791,9 +829,14 @@ function markAnswer(correct) {
         stats.correctAnswers++;
         stats.streak++;
         showMessage(`¡Excelente! Racha actual: ${stats.streak} 🔥`, 'success');
+        if (stats.streak >= voteThreshold && !voteTriggered) {
+            voteTriggered = true;
+            openVoteModal();
+        }
     } else {
         stats.incorrectAnswers++;
         stats.streak = 0;
+        voteTriggered = false;
         showMessage('¡Sigue intentando! La práctica hace al maestro 💪', 'success');
     }
 
@@ -849,6 +892,7 @@ function restartGame() {
         // Vaciar historial de preguntas
         questionHistory = {};
         gameEnded = false;
+        voteTriggered = false;
 
         // Limpiar roles actuales para que se reasignen en la próxima partida
         playerRoles = {};
@@ -909,4 +953,27 @@ function showEndGame(winnerRole) {
     `;
     answerBox.style.display = 'none';
     showMessage('Fin de la partida', 'success');
+}
+
+function openVoteModal() {
+    if (!voteModal) return;
+    voteOptions.innerHTML = '';
+    players.forEach(name => {
+        const btn = document.createElement('button');
+        const eliminated = playerRoles[name]?.eliminated;
+        btn.textContent = eliminated ? `${name} (eliminado)` : name;
+        btn.disabled = eliminated;
+        btn.addEventListener('click', () => revealVotedPlayer(name));
+        voteOptions.appendChild(btn);
+    });
+    voteModal.style.display = 'block';
+}
+
+function revealVotedPlayer(name) {
+    const role = playerRoles[name]?.role || 'desconocido';
+    alert(`${name} es ${role === 'saboteador' ? 'Saboteador del Conocimiento' : 'Buscador de la Sabiduría'}`);
+    if (playerRoles[name]) {
+        playerRoles[name].eliminated = true;
+    }
+    voteModal.style.display = 'none';
 }
