@@ -981,7 +981,7 @@ function showEndGame(winnerRole) {
 function openVoteModal() {
     if (!voteModal) return;
     if (voteInfoText) {
-        voteInfoText.textContent = `S'ha arribat a la ratxa de ${stats.streak} preguntes correctes. Ara heu de fer una discussió i votació per escollir un possible sabotejador.`;
+        voteInfoText.textContent = `Se ha llegado a la racha de ${stats.streak} preguntas correctas. Ahora deben discutir y votar para elegir a un posible saboteador.`;
     }
     voteOptions.innerHTML = '';
     players.forEach(name => {
