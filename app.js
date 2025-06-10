@@ -69,6 +69,7 @@ const voteThresholdInput = document.getElementById('voteThresholdInput');
 const voteModal = document.getElementById('voteModal');
 const voteOptions = document.getElementById('voteOptions');
 const closeVoteBtn = document.getElementById('closeVoteBtn');
+const voteInfoText = document.getElementById('voteInfoText');
 
 // Roles
 let playerRoles = {};
@@ -957,6 +958,9 @@ function showEndGame(winnerRole) {
 
 function openVoteModal() {
     if (!voteModal) return;
+    if (voteInfoText) {
+        voteInfoText.textContent = `S'ha arribat a la ratxa de ${stats.streak} preguntes correctes. Ara heu de fer una discussió i votació per escollir un possible sabotejador.`;
+    }
     voteOptions.innerHTML = '';
     players.forEach(name => {
         const btn = document.createElement('button');
