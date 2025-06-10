@@ -10,6 +10,7 @@ let stats = {
 };
 
 let gameEnded = false;
+let pendingAnswer = false;
 
 function getStoredItem(key) {
     const value = localStorage.getItem(key);
@@ -31,15 +32,14 @@ function setStoredItem(key, value) {
 
 // Elementos del DOM
 const apiKeyInput = document.getElementById('apiKey');
-const generateBtn = document.getElementById('generateBtn');
-const showAnswerBtn = document.getElementById('showAnswerBtn');
+const actionBtn = document.getElementById('actionBtn');
 const resetBtn = document.getElementById('resetBtn');
 const questionText = document.getElementById('questionText');
 const answerBox = document.getElementById('answerBox');
 const answerText = document.getElementById('answerText');
 const errorMessage = document.getElementById('errorMessage');
 const successMessage = document.getElementById('successMessage');
-const generateBtnText = document.getElementById('generateBtnText');
+const actionBtnText = document.getElementById('actionBtnText');
 const infoBtn = document.getElementById('infoBtn');
 const infoModal = document.getElementById('infoModal');
 const closeInfoBtn = document.getElementById('closeInfoBtn');
@@ -103,8 +103,7 @@ const applyGlobalBtn = document.getElementById('applyGlobalBtn');
 const topicsContainer = document.getElementById('topicsContainer');
 
 // Event listeners
-generateBtn.addEventListener('click', generateQuestion);
-showAnswerBtn.addEventListener('click', showAnswer);
+actionBtn.addEventListener('click', handleAction);
 resetBtn.addEventListener('click', restartGame);
 apiKeyInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleApiKeyStep();
@@ -612,7 +611,10 @@ function startGame() {
     questionHistory = {};
     gameEnded = false;
     gameScreen.style.display = 'block';
-    generateBtn.disabled = false;
+    actionBtn.disabled = false;
+    actionBtn.classList.remove('show-answer-btn');
+    actionBtn.classList.add('generate-btn');
+    actionBtnText.textContent = 'Generar Pregunta';
 
     const enabledTopicNames = availableTopics
         .filter(topic => topicsConfig[topic.id].enabled)
@@ -668,16 +670,23 @@ function showMessage(message, type) {
     }, 4000);
 }
 
+function handleAction() {
+    if (pendingAnswer) {
+        showAnswer();
+    } else {
+        generateQuestion();
+    }
+}
+
 async function generateQuestion() {
     if (!localMode && !apiKey) {
         showMessage('Por favor, configura tu API Key primero yendo a la configuración.', 'error');
         return;
     }
 
-    generateBtn.disabled = true;
-    generateBtnText.innerHTML = '<span class="loading"></span>Generando...';
+    actionBtn.disabled = true;
+    actionBtnText.innerHTML = '<span class="loading"></span>Generando...';
     answerBox.style.display = 'none';
-    showAnswerBtn.disabled = true;
 
     const enabledTopics = availableTopics.filter(topic => topicsConfig[topic.id]?.enabled);
     const randomIndex = Math.floor(Math.random() * enabledTopics.length);
@@ -768,7 +777,11 @@ async function generateQuestion() {
         }
         questionHistory[selectedTopic.id].push(currentQuestion.pregunta);
 
-        showAnswerBtn.disabled = false;
+        pendingAnswer = true;
+        actionBtn.disabled = false;
+        actionBtn.classList.remove('generate-btn');
+        actionBtn.classList.add('show-answer-btn');
+        actionBtnText.textContent = 'Mostrar Respuesta';
         resetBtn.style.display = 'inline-block';
     } catch (error) {
         console.error('Error:', error);
@@ -787,8 +800,12 @@ async function generateQuestion() {
         }
         questionText.textContent = 'Error al generar la pregunta. Intenta nuevamente.';
     } finally {
-        generateBtn.disabled = false;
-        generateBtnText.textContent = 'Generar Nueva Pregunta';
+        if (!pendingAnswer) {
+            actionBtn.classList.remove('show-answer-btn');
+            actionBtn.classList.add('generate-btn');
+            actionBtnText.textContent = 'Generar Pregunta';
+        }
+        actionBtn.disabled = false;
     }
 }
 
@@ -796,7 +813,10 @@ function showAnswer() {
     if (currentQuestion && currentQuestion.respuesta) {
         answerText.textContent = currentQuestion.respuesta;
         answerBox.style.display = 'block';
-        showAnswerBtn.disabled = true;
+        pendingAnswer = false;
+        actionBtn.classList.remove('show-answer-btn');
+        actionBtn.classList.add('generate-btn');
+        actionBtnText.textContent = 'Generar Nueva Pregunta';
         
         // Mostrar botones para marcar si acertó o no
         setTimeout(() => {
@@ -918,8 +938,11 @@ function restartGame() {
         // Resetear estado del juego
         currentQuestion = null;
         answerBox.style.display = 'none';
-        showAnswerBtn.disabled = true;
-        generateBtn.disabled = true;
+        pendingAnswer = false;
+        actionBtn.disabled = true;
+        actionBtn.classList.remove('show-answer-btn');
+        actionBtn.classList.add('generate-btn');
+        actionBtnText.textContent = 'Generar Pregunta';
         
         // Mostrar mensaje
         showMessage('Partida reiniciada. Las estadísticas se han restablecido. Configura los jugadores para comenzar de nuevo.', 'success');
@@ -937,8 +960,7 @@ function checkGameEnd() {
 }
 
 function showEndGame(winnerRole) {
-    generateBtn.disabled = true;
-    showAnswerBtn.disabled = true;
+    actionBtn.disabled = true;
 
     gameEnded = true;
 
