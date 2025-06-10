@@ -966,7 +966,7 @@ function openVoteModal() {
         btn.addEventListener('click', () => revealVotedPlayer(name));
         voteOptions.appendChild(btn);
     });
-    voteModal.style.display = 'block';
+    voteModal.style.display = 'flex';
 }
 
 function revealVotedPlayer(name) {
