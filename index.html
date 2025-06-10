@@ -770,26 +770,31 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 1000;
+            padding: 20px;
             overflow: auto;
+            align-items: center;
+            justify-content: center;
         }
 
         #voteContent {
-            background: #fff;
-            margin: 10% auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            padding: 30px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 450px;
             color: #2d3748;
             text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.4s ease;
         }
 
         #closeVoteBtn {
             float: right;
             font-size: 1.5em;
             cursor: pointer;
+            color: #c53030;
         }
 
         .vote-options {
@@ -797,15 +802,22 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .vote-options button {
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 6px;
-            background: #667eea;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .vote-options button:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
         }
 
         .vote-options button:disabled {
@@ -1025,7 +1037,7 @@
             <div id="tab-desc" class="tab-content active">
                 <h2>Buscadores de la Sabiduría vs Saboteadores del Conocimiento</h2>
                 <h3>Descripción del Juego</h3>
-                <p>Un juego de preguntas y respuestas con roles ocultos donde la sabiduría se enfrenta al sabotaje. Los <strong>Buscadores de la Sabiduría</strong> deben responder correctamente las preguntas mientras identifican a los <strong>Saboteadores del Conocimiento</strong>, quienes intentarán confundirlos sin ser descubiertos.</p>
+                <p>Un juego de preguntas y respuestas con roles ocultos donde la sabiduría se enfrenta al sabotaje. Los <strong>Buscadores de la Sabiduría</strong> deben responder correctamente las preguntas mientras identifican a los <strong>Saboteadores del Conocimiento</strong>, quienes intentarán confundirlos sin ser descubiertos. Cuando el equipo acumula una racha de aciertos determinada se abre una votación para intentar revelar al saboteador.</p>
             </div>
             <div id="tab-config" class="tab-content">
                 <h3>Configuración Inicial</h3>
@@ -1112,6 +1124,7 @@
                     <li><strong>Decisión Grupal</strong>: El grupo debe llegar a un consenso sobre la respuesta</li>
                     <li><strong>Revelación</strong>: Se muestra la respuesta correcta</li>
                     <li><strong>Registro</strong>: Se contabiliza si la respuesta fue correcta o incorrecta</li>
+                    <li><strong>Votación de Saboteador</strong>: Al alcanzar la racha configurada se abre una votación para eliminar a un jugador sospechoso</li>
                 </ol>
 
                 <h4>Estrategias por Rol</h4>
@@ -1144,7 +1157,7 @@
                 <ul>
                     <li>Cada jugador puede expresar su opinión sobre la respuesta</li>
                     <li>Los debates deben ser constructivos y basados en argumentos</li>
-                    <li>No se permite el voto directo; debe llegarse a un consenso</li>
+                    <li>La votación para revelar al saboteador solo se realiza cuando la racha de aciertos alcanza el umbral indicado</li>
                     <li>El tiempo de debate puede ser limitado según la dinámica del grupo</li>
                 </ul>
 
@@ -1185,6 +1198,7 @@
                     <li>Mantén tu rol en secreto hasta el final</li>
                     <li>Participa activamente en todos los debates</li>
                     <li>Observa los patrones de comportamiento de otros jugadores</li>
+                    <li>Aprovecha la votación para exponer a quien creas que es el saboteador</li>
                     <li>Disfruta del juego independientemente del resultado</li>
                 </ul>
 
