@@ -10,6 +10,7 @@ let stats = {
 };
 
 let gameEnded = false;
+let pendingAnswer = false;
 
 function getStoredItem(key) {
     const value = localStorage.getItem(key);
@@ -31,15 +32,14 @@ function setStoredItem(key, value) {
 
 // Elementos del DOM
 const apiKeyInput = document.getElementById('apiKey');
-const generateBtn = document.getElementById('generateBtn');
-const showAnswerBtn = document.getElementById('showAnswerBtn');
+const actionBtn = document.getElementById('actionBtn');
 const resetBtn = document.getElementById('resetBtn');
 const questionText = document.getElementById('questionText');
 const answerBox = document.getElementById('answerBox');
 const answerText = document.getElementById('answerText');
 const errorMessage = document.getElementById('errorMessage');
 const successMessage = document.getElementById('successMessage');
-const generateBtnText = document.getElementById('generateBtnText');
+const actionBtnText = document.getElementById('actionBtnText');
 const infoBtn = document.getElementById('infoBtn');
 const infoModal = document.getElementById('infoModal');
 const closeInfoBtn = document.getElementById('closeInfoBtn');
@@ -65,11 +65,18 @@ let players = [];
 let numPlayers = 0;
 const numPlayersSelect = document.getElementById('numPlayers');
 const namesContainer = document.getElementById('namesContainer');
+const voteThresholdInput = document.getElementById('voteThresholdInput');
+const voteModal = document.getElementById('voteModal');
+const voteOptions = document.getElementById('voteOptions');
+const closeVoteBtn = document.getElementById('closeVoteBtn');
+const voteInfoText = document.getElementById('voteInfoText');
 
 // Roles
 let playerRoles = {};
 let impostorNames = [];
 let currentRoleIndex = 0;
+let voteThreshold = 6;
+let voteTriggered = false;
 
 // Elementos de estadísticas
 const totalQuestionsEl = document.getElementById('totalQuestions');
@@ -97,8 +104,7 @@ const applyGlobalBtn = document.getElementById('applyGlobalBtn');
 const topicsContainer = document.getElementById('topicsContainer');
 
 // Event listeners
-generateBtn.addEventListener('click', generateQuestion);
-showAnswerBtn.addEventListener('click', showAnswer);
+actionBtn.addEventListener('click', handleAction);
 resetBtn.addEventListener('click', restartGame);
 apiKeyInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleApiKeyStep();
@@ -122,6 +128,23 @@ closeInfoBtn.addEventListener('click', () => {
 infoModal.addEventListener('click', (e) => {
     if (e.target === infoModal) infoModal.style.display = 'none';
 });
+if (voteThresholdInput) {
+    voteThresholdInput.addEventListener('change', () => {
+        const val = parseInt(voteThresholdInput.value, 10);
+        voteThreshold = isNaN(val) ? 6 : val;
+        setStoredItem('voteThreshold', voteThreshold);
+    });
+}
+if (closeVoteBtn) {
+    closeVoteBtn.addEventListener('click', () => {
+        voteModal.style.display = 'none';
+    });
+}
+if (voteModal) {
+    voteModal.addEventListener('click', (e) => {
+        if (e.target === voteModal) voteModal.style.display = 'none';
+    });
+}
 
 const tabLinks = document.querySelectorAll('.tab-link');
 const tabContents = document.querySelectorAll('.tab-content');
@@ -161,9 +184,16 @@ function loadSavedData() {
     // Cargar configuración de jugadores
     const storedPlayers = getStoredItem('players');
     const storedNumPlayers = getStoredItem('numPlayers');
+    const storedVote = getStoredItem('voteThreshold');
     if (storedPlayers && storedNumPlayers !== null) {
         players = storedPlayers;
         numPlayers = parseInt(storedNumPlayers, 10);
+    }
+    if (storedVote) {
+        voteThreshold = parseInt(storedVote, 10);
+        if (voteThresholdInput) {
+            voteThresholdInput.value = voteThreshold;
+        }
     }
 
     // Cargar configuración de temas
@@ -346,6 +376,13 @@ function loadPlayersConfig() {
 
             players = [...savedPlayers];
         }, 100);
+    }
+
+    if (storedVote) {
+        voteThreshold = parseInt(storedVote, 10);
+        if (voteThresholdInput) {
+            voteThresholdInput.value = voteThreshold;
+        }
     }
 }
 
@@ -575,7 +612,10 @@ function startGame() {
     questionHistory = {};
     gameEnded = false;
     gameScreen.style.display = 'block';
-    generateBtn.disabled = false;
+    actionBtn.disabled = false;
+    actionBtn.classList.remove('show-answer-btn');
+    actionBtn.classList.add('generate-btn');
+    actionBtnText.textContent = 'Generar Pregunta';
 
     const enabledTopicNames = availableTopics
         .filter(topic => topicsConfig[topic.id].enabled)
@@ -618,6 +658,7 @@ function loadTopicsConfig() {
 function savePlayersConfig() {
     setStoredItem('players', players);
     setStoredItem('numPlayers', numPlayers);
+    setStoredItem('voteThreshold', voteThreshold);
 }
 
 function showMessage(message, type) {
@@ -630,16 +671,23 @@ function showMessage(message, type) {
     }, 4000);
 }
 
+function handleAction() {
+    if (pendingAnswer) {
+        showAnswer();
+    } else {
+        generateQuestion();
+    }
+}
+
 async function generateQuestion() {
     if (!localMode && !apiKey) {
         showMessage('Por favor, configura tu API Key primero yendo a la configuración.', 'error');
         return;
     }
 
-    generateBtn.disabled = true;
-    generateBtnText.innerHTML = '<span class="loading"></span>Generando...';
+    actionBtn.disabled = true;
+    actionBtnText.innerHTML = '<span class="loading"></span>Generando...';
     answerBox.style.display = 'none';
-    showAnswerBtn.disabled = true;
 
     const enabledTopics = availableTopics.filter(topic => topicsConfig[topic.id]?.enabled);
     const randomIndex = Math.floor(Math.random() * enabledTopics.length);
@@ -730,7 +778,11 @@ async function generateQuestion() {
         }
         questionHistory[selectedTopic.id].push(currentQuestion.pregunta);
 
-        showAnswerBtn.disabled = false;
+        pendingAnswer = true;
+        actionBtn.disabled = false;
+        actionBtn.classList.remove('generate-btn');
+        actionBtn.classList.add('show-answer-btn');
+        actionBtnText.textContent = 'Mostrar Respuesta';
         resetBtn.style.display = 'inline-block';
     } catch (error) {
         console.error('Error:', error);
@@ -749,8 +801,12 @@ async function generateQuestion() {
         }
         questionText.textContent = 'Error al generar la pregunta. Intenta nuevamente.';
     } finally {
-        generateBtn.disabled = false;
-        generateBtnText.textContent = 'Generar Nueva Pregunta';
+        if (!pendingAnswer) {
+            actionBtn.classList.remove('show-answer-btn');
+            actionBtn.classList.add('generate-btn');
+            actionBtnText.textContent = 'Generar Pregunta';
+        }
+        actionBtn.disabled = false;
     }
 }
 
@@ -758,7 +814,10 @@ function showAnswer() {
     if (currentQuestion && currentQuestion.respuesta) {
         answerText.textContent = currentQuestion.respuesta;
         answerBox.style.display = 'block';
-        showAnswerBtn.disabled = true;
+        pendingAnswer = false;
+        actionBtn.classList.remove('show-answer-btn');
+        actionBtn.classList.add('generate-btn');
+        actionBtnText.textContent = 'Generar Nueva Pregunta';
         
         // Mostrar botones para marcar si acertó o no
         setTimeout(() => {
@@ -791,9 +850,14 @@ function markAnswer(correct) {
         stats.correctAnswers++;
         stats.streak++;
         showMessage(`¡Excelente! Racha actual: ${stats.streak} 🔥`, 'success');
+        if (stats.streak >= voteThreshold && !voteTriggered) {
+            voteTriggered = true;
+            openVoteModal();
+        }
     } else {
         stats.incorrectAnswers++;
         stats.streak = 0;
+        voteTriggered = false;
         showMessage('¡Sigue intentando! La práctica hace al maestro 💪', 'success');
     }
 
@@ -849,6 +913,7 @@ function restartGame() {
         // Vaciar historial de preguntas
         questionHistory = {};
         gameEnded = false;
+        voteTriggered = false;
 
         // Limpiar roles actuales para que se reasignen en la próxima partida
         playerRoles = {};
@@ -874,8 +939,11 @@ function restartGame() {
         // Resetear estado del juego
         currentQuestion = null;
         answerBox.style.display = 'none';
-        showAnswerBtn.disabled = true;
-        generateBtn.disabled = true;
+        pendingAnswer = false;
+        actionBtn.disabled = true;
+        actionBtn.classList.remove('show-answer-btn');
+        actionBtn.classList.add('generate-btn');
+        actionBtnText.textContent = 'Generar Pregunta';
         
         // Mostrar mensaje
         showMessage('Partida reiniciada. Las estadísticas se han restablecido. Configura los jugadores para comenzar de nuevo.', 'success');
@@ -893,8 +961,7 @@ function checkGameEnd() {
 }
 
 function showEndGame(winnerRole) {
-    generateBtn.disabled = true;
-    showAnswerBtn.disabled = true;
+    actionBtn.disabled = true;
 
     gameEnded = true;
 
@@ -909,4 +976,30 @@ function showEndGame(winnerRole) {
     `;
     answerBox.style.display = 'none';
     showMessage('Fin de la partida', 'success');
+}
+
+function openVoteModal() {
+    if (!voteModal) return;
+    if (voteInfoText) {
+        voteInfoText.textContent = `Se ha llegado a la racha de ${stats.streak} preguntas correctas. Ahora deben discutir y votar para elegir a un posible saboteador.`;
+    }
+    voteOptions.innerHTML = '';
+    players.forEach(name => {
+        const btn = document.createElement('button');
+        const eliminated = playerRoles[name]?.eliminated;
+        btn.textContent = eliminated ? `${name} (eliminado)` : name;
+        btn.disabled = eliminated;
+        btn.addEventListener('click', () => revealVotedPlayer(name));
+        voteOptions.appendChild(btn);
+    });
+    voteModal.style.display = 'flex';
+}
+
+function revealVotedPlayer(name) {
+    const role = playerRoles[name]?.role || 'desconocido';
+    alert(`${name} es ${role === 'saboteador' ? 'Saboteador del Conocimiento' : 'Buscador de la Sabiduría'}`);
+    if (playerRoles[name]) {
+        playerRoles[name].eliminated = true;
+    }
+    voteModal.style.display = 'none';
 }
